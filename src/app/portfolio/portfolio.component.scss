@@ -1,0 +1,33 @@
+.portfolio-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    margin-top: 200px;
+
+
+
+
+
+    span {
+        display: inline-block;
+        font-weight: 900;
+        font-size: 70px;
+        padding: 0 20px 0 20px;
+        z-index: 15;
+        background-color: rgb(20, 29, 47);
+    }
+}
+
+
+.blue-line {
+    width: 75%;
+    height: 5px;
+    background-color: #4B47FF;
+    position: absolute;
+    right: 0;
+    top: 50px;
+}
