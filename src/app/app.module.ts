@@ -11,6 +11,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsComponent } from './skills/skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { JoinComponent } from './join/join.component';
+import { PolloLocoComponent } from './pollo-loco/pollo-loco.component';
+import { CrmComponent } from './crm/crm.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { JoinComponent } from './join/join.component';
     AboutMeComponent,
     SkillsComponent,
     PortfolioComponent,
-    JoinComponent
+    JoinComponent,
+    PolloLocoComponent,
+    CrmComponent
   ],
   imports: [
     BrowserModule,

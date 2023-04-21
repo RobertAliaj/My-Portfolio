@@ -4,6 +4,7 @@
     padding: 0 110px 0 110px;
     color: white;
     margin-top: 200px;
+    position: relative;
 }
 
 .description {
@@ -43,10 +44,22 @@
 }
 
 
-.icons img:hover{
+.icons img:hover {
     transform: translateY(-10px);
 }
 
 .skills-button {
     margin: 20px 0 0 0;
+}
+
+.background {
+    position: absolute;
+    left: 0;
+    z-index: -10;
+    object-fit: contain;
+    position: absolute;
+    left: -550px;
+    z-index: -10;
+    object-fit: contain;
+    transform: rotateX(160deg);
 }

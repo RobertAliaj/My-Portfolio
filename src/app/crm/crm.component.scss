@@ -2,8 +2,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    // flex-direction: row-reverse;
     color: white;
+    flex-direction: row-reverse;
+    // position: relative;
+    overflow: hidden;
+
     width: 100%;
     padding: 0 110px 0 110px;
     margin-top: 200px;
@@ -64,11 +67,20 @@
     }
 }
 
+// .background{
+//     position: absolute;
+//     right: -100px;
+//     object-fit: contain;
+//     width: 800px !important;
+//     z-index: -15;
+// }
 
-.background{
+
+.background {
     position: absolute;
-    left: -100px;
+    right: 0;
     object-fit: contain;
-    width: 800px !important;
+    width: calc(100% - 100px);
     z-index: -15;
-}
+  }
+  
