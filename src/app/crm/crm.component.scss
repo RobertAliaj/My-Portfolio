@@ -4,12 +4,14 @@
     align-items: center;
     color: white;
     flex-direction: row-reverse;
-    // position: relative;
+    text-align: right;
     overflow: hidden;
-
+    gap: 10%;
     width: 100%;
     padding: 0 110px 0 110px;
     margin-top: 200px;
+
+    height: 400px;
 
     img {
         width: 450px;
@@ -18,10 +20,19 @@
 }
 
 
+.img-div {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+
 .project-description {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: 15px;
+    width: 50%;
 
     p {
         font-weight: 400;
@@ -52,14 +63,14 @@
 }
 
 
-.github-button{
+.github-button {
     background-color: unset !important;
     border: 1px solid #00BEE8;
 }
 
 .project-button {
     background-color: rgb(75, 71, 255);
-    margin: 25px 80px 0 0;
+    margin: 25px 0 0 80px;
 
 
     &:hover {
@@ -67,20 +78,12 @@
     }
 }
 
-// .background{
-//     position: absolute;
-//     right: -100px;
-//     object-fit: contain;
-//     width: 800px !important;
-//     z-index: -15;
-// }
-
 
 .background {
+    width: unset !important;
     position: absolute;
     right: 0;
     object-fit: contain;
     width: calc(100% - 100px);
     z-index: -15;
-  }
-  
+}
