@@ -13,6 +13,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { JoinComponent } from './join/join.component';
 import { PolloLocoComponent } from './pollo-loco/pollo-loco.component';
 import { CrmComponent } from './crm/crm.component';
+import { ContactTitleComponent } from './contact-title/contact-title.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CrmComponent } from './crm/crm.component';
     PortfolioComponent,
     JoinComponent,
     PolloLocoComponent,
-    CrmComponent
+    CrmComponent,
+    ContactTitleComponent
   ],
   imports: [
     BrowserModule,
