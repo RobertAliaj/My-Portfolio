@@ -14,6 +14,8 @@ import { JoinComponent } from './join/join.component';
 import { PolloLocoComponent } from './pollo-loco/pollo-loco.component';
 import { CrmComponent } from './crm/crm.component';
 import { ContactTitleComponent } from './contact-title/contact-title.component';
+import { ImprintComponent } from './imprint/imprint.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ContactTitleComponent } from './contact-title/contact-title.component';
     JoinComponent,
     PolloLocoComponent,
     CrmComponent,
-    ContactTitleComponent
+    ContactTitleComponent,
+    ImprintComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

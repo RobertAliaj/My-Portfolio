@@ -6,7 +6,7 @@
     padding: 0 110px 0 110px;
     position: relative;
     color: white;
-
+    margin-top: 100px;
 
     form {
         display: flex;
@@ -50,6 +50,20 @@
             background: #141D2F;
             height: 202px;
             color: white;
+            resize: none;
+        }
+
+        button {
+
+            background-color: #00BEE8;
+            margin-top: 0px;
+            margin-left: 0px;
+
+            &:hover {
+                background-color: rgb(75, 71, 255);
+                transform: scaleX(1.1) scaleY(1.1);
+                transition: all 125ms ease-in-out;
+            }
         }
 
     }
@@ -93,4 +107,13 @@ input:-webkit-autofill {
 
 input {
     caret-color: white;
+}
+
+
+.bg-image {
+    position: absolute;
+    left: 0;
+    bottom: -370px;
+    z-index: 15;
+    object-fit: contain;
 }

@@ -4,41 +4,19 @@
 
 body {
     margin: 0;
-    // background-color: rgb(86, 106, 146);
     background-color: rgb(20, 29, 47);
     font-family: 'Poppins', sans-serif;
-
+    min-height: 100vh;
+    background-image: url(assets/img/background-images/Contact-form-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+    background-size: 650px;
 }
 
-// .button {
-//     display: block;
-//     background-color: #00BEE8;
-//     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-//     border-radius: 10px;
-//     width: fit-content;
-//     height: 58px;
-//     padding: 15px 30px;
-//     gap: 10px;
-//     border: none;
-//     font-size: 23px;
-//     line-height: 120%;
-//     color: white;
-//     cursor: pointer;
-//     margin-top: 50px;
-//     margin-left: 150px;
-//     text-decoration: none;
-
-//     &:hover {
-//         background-color: rgb(75, 71, 255);
-//         transform: scale(1.1) !important;
-//         transition: all 125ms ease-in-out;
-//     }
-
-// }
-
-
 .button,
-.project-button {
+.project-button,
+.contact-button {
     position: relative;
     z-index: 1;
     display: block;
