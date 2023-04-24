@@ -103,7 +103,7 @@
         }
     }
 
-    .email:hover{
+    .email:hover {
         scale: 1 !important;
     }
 }
@@ -116,11 +116,15 @@
     font-size: 23px;
     text-decoration: none;
     transform: rotate(90deg);
-
-    img {
-        transform: rotate(-90deg);
-    }
 }
+
+
+.scroll-down-arrow {
+    transform: rotate(-90deg);
+    animation: scroll-down-animation 2s infinite;
+}
+
+
 
 
 .background-purple {
@@ -133,4 +137,18 @@
     width: 303px;
     background-size: cover;
     height: 600px;
+}
+
+
+
+@keyframes scroll-down-animation {
+
+    0%,
+    100% {
+        transform: rotate(-90deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-90deg) translateY(10px);
+    }
 }
