@@ -47,11 +47,35 @@ export class ContactFormComponent {
       }
     );
 
-      // Hier noch ein Text anzeigen "Email wurde gesendet"
+    // Hier noch ein Text anzeigen "Email wurde gesendet"
 
     // sobald es gesendet wurde werden die Felder wie aktiviert
     nameField.disabled = false;
     messageField.disabled = false;
     sendButton.disabled = false;
+  }
+
+
+  onInput(event: Event) {
+    const target = event.target as HTMLInputElement;
+    if (target.value.length > 0) {
+      target.classList.add("has-content");
+      target.classList.remove("empty-focused");
+    } else {
+      target.classList.remove("has-content");
+      target.classList.add("empty-focused");
+    }
+  }
+
+  onBlur(event: Event) {
+    const target = event.target as HTMLInputElement;
+    if (target.value.length === 0) {
+      target.classList.remove("empty-focused");
+
+
+      // Wenn ich möchte das die Input Borders nach dem leeren Rot bleiben, dann einfach die "empty Focused raus nehmen und die untere Zeile rein kommentieren"
+      // target.style.borderColor = "red"; // Setzt die ursprüngliche Farbe zurück, wenn das Feld leer ist.
+
+    }
   }
 }

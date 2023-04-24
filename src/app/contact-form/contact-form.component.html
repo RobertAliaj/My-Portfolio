@@ -9,11 +9,11 @@
 
     <form (submit)="sendMail()" #myForm ngNativeValidate>
 
-        <input required type="text" name="name" placeholder="Your name" #nameField>
+        <input required type="text" name="name" placeholder="Your name" #nameField (input)="onInput($event)" (blur)="onBlur($event)">
 
-        <input required type="email" name="email" placeholder="Your email">
+        <input required type="email" name="email" placeholder="Your email" (input)="onInput($event)" (blur)="onBlur($event)">
 
-        <textarea required type="text" name="message" placeholder="Your message" #messageField></textarea>
+        <textarea required type="text" name="message" placeholder="Your message" #messageField (input)="onInput($event)" (blur)="onBlur($event)"></textarea>
 
         <button class="contact-button" #sendButton type="submit">Contact me!!!</button>
     </form>

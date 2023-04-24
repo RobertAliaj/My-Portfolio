@@ -11,7 +11,6 @@
     form {
         display: flex;
         align-items: center;
-        // justify-content: space-between;
         gap: 25px;
         flex-direction: column;
         width: 50%;
@@ -32,11 +31,34 @@
             color: white;
         }
 
+        input:hover,
+        textarea:hover {
+            border-color: #00BEE8;
+        }
+
+        input.has-content:hover,
+        input.empty-focused:hover,
+        textarea.has-content:hover,
+        textarea.empty-focused:hover {
+            border-color: #00BEE8;
+        }
+
+        input.has-content,
+        textarea.has-content {
+            border-color: green !important;
+        }
+
+        input.empty-focused,
+        textarea.empty-focused {
+            border-color: red !important;
+        }
+
+
         input:focus,
         textarea:focus {
             background: #141D2F;
             color: white;
-            border: 1px solid green;
+            border: 1px solid red;
             outline: none;
         }
 

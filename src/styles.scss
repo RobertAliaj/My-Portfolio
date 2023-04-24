@@ -14,6 +14,14 @@ body {
     background-size: 650px;
 }
 
+
+a,
+button,
+img {
+    transition: all 125ms ease-in-out;
+
+}
+
 .button,
 .project-button,
 .contact-button {
