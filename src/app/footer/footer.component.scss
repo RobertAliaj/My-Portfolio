@@ -33,15 +33,55 @@
         object-fit: contain;
     }
 
-    a {
-        padding-left: 15px;
-        text-decoration: none;
-        color: white;
+    // a {
+    //     padding-left: 15px;
+    //     text-decoration: none;
+    //     color: white;
     
-        &:hover{
-            text-decoration: underline;
+    //     &:hover{
+    //         text-decoration: underline;
+    //     }
+    // }
+
+
+    a {
+        color: white;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        transition: all 225ms ease-in-out;
+        outline: none;
+    
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: -1px;
+            width: 0;
+            height: 3px;
+            border-radius: 5px;
+            background-color: rgb(75, 71, 255);
+            transition: all 125ms ease-in-out;
+        }
+    
+        &:hover {
+            color: #00BEE8;
+            cursor: pointer;
+    
+            &:after {
+                width: 40%;
+            }
+        }
+    
+        &:focus {
+            color: #00BEE8;
+    
+            &:after {
+                width: 100%;
+            }
         }
     }
+
 
 
 }
