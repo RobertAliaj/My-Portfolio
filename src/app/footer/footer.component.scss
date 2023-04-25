@@ -33,66 +33,53 @@
         object-fit: contain;
     }
 
-    // a {
-    //     padding-left: 15px;
-    //     text-decoration: none;
-    //     color: white;
-    
-    //     &:hover{
-    //         text-decoration: underline;
-    //     }
-    // }
+}
 
+.imprint {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: all 225ms ease-in-out;
+    outline: none;
 
-    a {
-        color: white;
-        text-decoration: none;
-        position: relative;
-        display: inline-block;
-        transition: all 225ms ease-in-out;
-        outline: none;
-    
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: -1px;
+        width: 0;
+        height: 3px;
+        border-radius: 5px;
+        background-color: rgb(75, 71, 255);
+        transition: all 125ms ease-in-out;
+    }
+
+    &:hover {
+        color: #00BEE8;
+        cursor: pointer;
+
         &:after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: -1px;
-            width: 0;
-            height: 3px;
-            border-radius: 5px;
-            background-color: rgb(75, 71, 255);
-            transition: all 125ms ease-in-out;
-        }
-    
-        &:hover {
-            color: #00BEE8;
-            cursor: pointer;
-    
-            &:after {
-                width: 40%;
-            }
-        }
-    
-        &:focus {
-            color: #00BEE8;
-    
-            &:after {
-                width: 100%;
-            }
+            width: 40%;
         }
     }
 
+    &:focus {
+        color: #00BEE8;
 
+        &:after {
+            width: 100%;
+        }
+    }
 
-}
+    .name {
+        width: 30%;
+        display: flex;
+        justify-content: center;
 
-.name {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-
-    &:hover{
-        cursor: default;
+        &:hover {
+            cursor: default;
+        }
     }
 }
 

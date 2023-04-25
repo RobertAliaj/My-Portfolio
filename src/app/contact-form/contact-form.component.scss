@@ -6,7 +6,7 @@
     padding: 0 110px 0 110px;
     position: relative;
     color: white;
-    margin-top: 100px;
+    margin-top: 70px;
 
     form {
         display: flex;
@@ -15,6 +15,11 @@
         flex-direction: column;
         width: 50%;
 
+
+        .input-bg{
+            background: url('^assets/img/background-images/input-bg.png') no-repeat scroll 7px 7px;
+            background-position: calc(100% - 20px) center;
+        }
 
         input {
             width: 100%;
@@ -26,15 +31,18 @@
             color: white;
         }
 
+
         input::placeholder,
         textarea::placeholder {
             color: white;
         }
 
+
         input:hover,
         textarea:hover {
             border-color: #00BEE8;
         }
+
 
         input.has-content:hover,
         input.empty-focused:hover,
@@ -42,6 +50,7 @@
         textarea.empty-focused:hover {
             border-color: #00BEE8;
         }
+
 
         input.has-content,
         textarea.has-content {

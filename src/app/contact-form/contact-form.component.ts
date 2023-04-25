@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-contact-form',
@@ -17,6 +17,7 @@ export class ContactFormComponent {
   constructor() { }
 
   async sendMail() {
+
 
     // Hier wird auf die Variable zugegriffen (mit nativeElement) und da wird gesagt das alle Felder disabled sein sollen nach dem die Funktion aufgerufen wurde
     // hol die Elemente (das gleiche wie mit "document.getElementById('')")
@@ -57,6 +58,7 @@ export class ContactFormComponent {
 
 
   onInput(event: Event) {
+
     const target = event.target as HTMLInputElement;
     if (target.value.length > 0) {
       target.classList.add("has-content");

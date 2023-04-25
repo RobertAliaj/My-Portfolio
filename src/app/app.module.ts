@@ -16,6 +16,7 @@ import { CrmComponent } from './crm/crm.component';
 import { ContactTitleComponent } from './contact-title/contact-title.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { FooterComponent } from './footer/footer.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     CrmComponent,
     ContactTitleComponent,
     ImprintComponent,
-    FooterComponent
+    FooterComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
