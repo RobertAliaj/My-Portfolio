@@ -8,16 +8,22 @@ import { Component, ViewChild, ElementRef, Input } from '@angular/core';
 
 export class ContactFormComponent {
 
-
   // Viewchild muss erst mal importiert werden (oben) damit auf das "Id" zugegriefen werden kann
   @ViewChild('nameField') nameField!: ElementRef;
   @ViewChild('messageField') messageField!: ElementRef;
   @ViewChild('sendButton') sendButton!: ElementRef;
 
+  showWarningName = false;
+  showWarningEmail = false;
+  showWarningMessage = false;
+
+
   constructor() { }
+
 
   async sendMail() {
 
+    // @Input() playerActive: boolean = false;
 
     // Hier wird auf die Variable zugegriffen (mit nativeElement) und da wird gesagt das alle Felder disabled sein sollen nach dem die Funktion aufgerufen wurde
     // hol die Elemente (das gleiche wie mit "document.getElementById('')")
@@ -49,7 +55,6 @@ export class ContactFormComponent {
     );
 
     // Hier noch ein Text anzeigen "Email wurde gesendet"
-
     // sobald es gesendet wurde werden die Felder wie aktiviert
     nameField.disabled = false;
     messageField.disabled = false;
@@ -57,27 +62,85 @@ export class ContactFormComponent {
   }
 
 
-  onInput(event: Event) {
-
+  onInput(event: Event, inputType: string) {
     const target = event.target as HTMLInputElement;
-    if (target.value.length > 0) {
-      target.classList.add("has-content");
-      target.classList.remove("empty-focused");
-    } else {
-      target.classList.remove("has-content");
-      target.classList.add("empty-focused");
+    this.updateInputClasses(target);
+    target.value.length > 0 ? this.showRequiredText(inputType) : this.hideRequiredText(inputType);
+  }
+
+
+  showRequiredText(inputType: string) {
+    switch (inputType) {
+      case 'name':
+        this.showWarningName = false;
+        break;
+      case 'email':
+        this.showWarningEmail = false;
+        break;
+      case 'message':
+        this.showWarningMessage = false;
+        break;
+    }
+  }
+
+
+  hideRequiredText(inputType: string) {
+    switch (inputType) {
+      case 'name':
+        this.showWarningName = true;
+        break;
+      case 'email':
+        this.showWarningEmail = true;
+        break;
+      case 'message':
+        this.showWarningMessage = true;
+        break;
     }
   }
 
   onBlur(event: Event) {
     const target = event.target as HTMLInputElement;
+    this.updateInputClasses(target);
+  }
+
+  updateInputClasses(target: HTMLInputElement) {
+    target.value.length > 0 ? this.turnInputFieldToGreen(target) : this.turnInputFieldToRed(target);
+  }
+
+  turnInputFieldToGreen(target: HTMLInputElement) {
+    target.classList.add('input-bg-success');
+    target.classList.add("has-content");
+    target.classList.remove("empty-focused");
+    target.classList.remove('input-bg-warning');
+  }
+
+  turnInputFieldToRed(target: HTMLInputElement) {
+    target.classList.remove("has-content");
+    target.classList.remove('input-bg-success');
+    target.classList.add("empty-focused");
+    target.classList.add('input-bg-warning');
+  }
+
+
+  // Diese Funktion checkt das erste 
+  onFocus(event: Event, inputType: string) {
+    const target = event.target as HTMLInputElement;
+
     if (target.value.length === 0) {
-      target.classList.remove("empty-focused");
+      target.classList.add('input-bg-warning')
 
-
-      // Wenn ich möchte das die Input Borders nach dem leeren Rot bleiben, dann einfach die "empty Focused raus nehmen und die untere Zeile rein kommentieren"
-      // target.style.borderColor = "red"; // Setzt die ursprüngliche Farbe zurück, wenn das Feld leer ist.
-
+      switch (inputType) {
+        case 'name':
+          this.showWarningName = true;
+          break;
+        case 'email':
+          this.showWarningEmail = true;
+          break;
+        case 'message':
+          this.showWarningMessage = true;
+          break;
+      }
     }
   }
+
 }

@@ -7,13 +7,25 @@
         <p>Need a Frontend developer? <b> Contact me! </b></p>
     </div>
 
-    <form (submit)="sendMail()" #myForm ngNativeValidate>
+    <form (submit)="sendMail()" #myForm ngNativeValidate >
 
-        <input required type="text" name="name" placeholder="Your name" #nameField (input)="onInput($event)" (blur)="onBlur($event)">
+        <div class="input-parent">
+            <input required type="text" name="name" placeholder="Your name" #nameField (input)="onInput($event, 'name')"
+                (blur)="onBlur($event)" (focus)="onFocus($event, 'name')">
+            <span [class.transparent]="!showWarningName">Your name is required</span>
+        </div>
 
-        <input required type="email" name="email" placeholder="Your email" (input)="onInput($event)" (blur)="onBlur($event)">
+        <div class="input-parent">
+            <input required type="email" name="email" placeholder="Your email" (input)="onInput($event, 'email')"
+                (blur)="onBlur($event)" (focus)="onFocus($event, 'email')">
+            <span [class.transparent]="!showWarningEmail"  >Your email is required</span>
+        </div>
 
-        <textarea required type="text" name="message" placeholder="Your message" #messageField (input)="onInput($event)" (blur)="onBlur($event)"></textarea>
+        <div class="input-parent">
+            <textarea required type="text" name="message" placeholder="Your message" #messageField (input)="onInput($event, 'message')"
+            (blur)="onBlur($event)" (focus)="onFocus($event, 'message')"></textarea>
+            <span [class.transparent]="!showWarningMessage"  >Your message is empty</span>
+        </div>
 
         <button class="contact-button" #sendButton type="submit">Send Message :) </button>
     </form>
