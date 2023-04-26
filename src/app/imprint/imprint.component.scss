@@ -1,0 +1,20 @@
+.imprint-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 120px;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    margin-top: 200px;
+
+    a{
+        color: white;
+        text-decoration: double;
+    }
+}
