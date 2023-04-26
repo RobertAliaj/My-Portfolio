@@ -10,19 +10,19 @@
     <form (submit)="sendMail()" #myForm ngNativeValidate >
 
         <div class="input-parent">
-            <input required type="text" name="name" placeholder="Your name" #nameField (input)="onInput($event, 'name')"
+            <input required type="text" name="name" placeholder="Your name" #nameField (change)="onInput($event, 'name')" 
                 (blur)="onBlur($event)" (focus)="onFocus($event, 'name')">
             <span [class.transparent]="!showWarningName">Your name is required</span>
         </div>
 
         <div class="input-parent">
-            <input required type="email" name="email" placeholder="Your email" (input)="onInput($event, 'email')"
+            <input required type="email" name="email" placeholder="Your email" (change)="onInput($event, 'email')"
                 (blur)="onBlur($event)" (focus)="onFocus($event, 'email')">
             <span [class.transparent]="!showWarningEmail"  >Your email is required</span>
         </div>
 
         <div class="input-parent">
-            <textarea required type="text" name="message" placeholder="Your message" #messageField (input)="onInput($event, 'message')"
+            <textarea required type="text" name="message" placeholder="Your message" #messageField (change)="onInput($event, 'message')"
             (blur)="onBlur($event)" (focus)="onFocus($event, 'message')"></textarea>
             <span [class.transparent]="!showWarningMessage"  >Your message is empty</span>
         </div>

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-contact-form',
@@ -19,7 +19,6 @@ export class ContactFormComponent {
 
 
   constructor() { }
-
 
   async sendMail() {
 
@@ -68,36 +67,6 @@ export class ContactFormComponent {
     target.value.length > 0 ? this.showRequiredText(inputType) : this.hideRequiredText(inputType);
   }
 
-
-  showRequiredText(inputType: string) {
-    switch (inputType) {
-      case 'name':
-        this.showWarningName = false;
-        break;
-      case 'email':
-        this.showWarningEmail = false;
-        break;
-      case 'message':
-        this.showWarningMessage = false;
-        break;
-    }
-  }
-
-
-  hideRequiredText(inputType: string) {
-    switch (inputType) {
-      case 'name':
-        this.showWarningName = true;
-        break;
-      case 'email':
-        this.showWarningEmail = true;
-        break;
-      case 'message':
-        this.showWarningMessage = true;
-        break;
-    }
-  }
-
   onBlur(event: Event) {
     const target = event.target as HTMLInputElement;
     this.updateInputClasses(target);
@@ -106,6 +75,9 @@ export class ContactFormComponent {
   updateInputClasses(target: HTMLInputElement) {
     target.value.length > 0 ? this.turnInputFieldToGreen(target) : this.turnInputFieldToRed(target);
   }
+
+
+
 
   turnInputFieldToGreen(target: HTMLInputElement) {
     target.classList.add('input-bg-success');
@@ -143,4 +115,33 @@ export class ContactFormComponent {
     }
   }
 
+
+  showRequiredText(inputType: string) {
+    switch (inputType) {
+      case 'name':
+        this.showWarningName = false;
+        break;
+      case 'email':
+        this.showWarningEmail = false;
+        break;
+      case 'message':
+        this.showWarningMessage = false;
+        break;
+    }
+  }
+
+
+  hideRequiredText(inputType: string) {
+    switch (inputType) {
+      case 'name':
+        this.showWarningName = true;
+        break;
+      case 'email':
+        this.showWarningEmail = true;
+        break;
+      case 'message':
+        this.showWarningMessage = true;
+        break;
+    }
+  }
 }
