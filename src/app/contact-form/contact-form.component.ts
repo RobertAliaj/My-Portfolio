@@ -6,9 +6,8 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./contact-form.component.scss']
 })
 
-export class ContactFormComponent {
 
-  [key: string]: any;
+export class ContactFormComponent {
 
   // Viewchild muss erst mal importiert werden (oben) damit auf das "Id" zugegriefen werden kann
   @ViewChild('nameField') nameField!: ElementRef;
@@ -16,6 +15,7 @@ export class ContactFormComponent {
   @ViewChild('emailField') emailField!: ElementRef;
   @ViewChild('sendButton') sendButton!: ElementRef;
 
+  [key: string]: any;
 
   showWarningName = false;
   showWarningEmail = false;
@@ -25,50 +25,58 @@ export class ContactFormComponent {
   showGreenCheckEmail = false;
   showGreenCheckMessage = false;
 
-
   showLoader = false;
   emailSent = false;
 
   target!: HTMLInputElement;
 
 
-
   constructor() { }
 
-  async sendMail() {
-
-
-
-    // Hier wird auf die Variable zugegriffen (mit nativeElement) und da wird gesagt das alle Felder disabled sein sollen nach dem die Funktion aufgerufen wurde
-    // hol die Elemente (das gleiche wie mit "document.getElementById('')")
+  sendMail() {
     let nameField = this.nameField.nativeElement;
     let messageField = this.messageField.nativeElement;
     let emailField = this.emailField.nativeElement;
     let sendButton = this.sendButton.nativeElement;
-
-    // deaktiviere die Felder
-    nameField.disabled = true;
-    messageField.disabled = true;
-    sendButton.disabled = true;
-    this.showLoader = true;
-    this.emailSent = true;
-
-
-
-    // hier werden die Daten vorbereitet die man senden möchte
     let fd = new FormData();
+
+    this.prepareData(fd, nameField, messageField);
+    this.sendData(fd);
+    this.disableInputFields(nameField, messageField, sendButton);
+
+    this.clearInputfields(nameField, emailField, messageField);
+    this.enableInputFields(nameField, messageField, sendButton);
+    this.showDefaultButton();
+  }
+
+
+  prepareData(fd: any, nameField: any, messageField: any) {
     fd.append('name', nameField.value);
     fd.append('message', messageField.value);
+  }
 
 
-    // hier wird das ganze an die unten stehende URL per "post request" gesendet  
+  // hier wird das ganze an die unten stehende URL per "post request" gesendet  
+  async sendData(fd: any) {
     await fetch('https://robert-aliaj.developerakademie.net/send_mail/send_mail.php',
       {
         method: 'POST',
         body: fd,
       }
     );
+  }
 
+
+  disableInputFields(nameField: any, messageField: any, sendButton: any) {
+    nameField.disabled = true;
+    messageField.disabled = true;
+    sendButton.disabled = true;
+    this.showLoader = true;
+    this.emailSent = true;
+  }
+
+
+  clearInputfields(nameField: any, emailField: any, messageField: any) {
     setTimeout(() => {
       nameField.value = '';
       emailField.value = '';
@@ -81,57 +89,33 @@ export class ContactFormComponent {
       this.showGreenCheckName = false;
       this.showGreenCheckEmail = false;
       this.showGreenCheckMessage = false;
-
-    }, 2000);
-
-
-    setTimeout(() => {
       this.showLoader = false;
     }, 2000);
+  }
 
 
-    setTimeout(() => {
-    this.emailSent = false;
-    }, 4000);
-
-
-    // sobald es gesendet wurde werden die Felder wieder aktiviert
+  enableInputFields(nameField: any, messageField: any, sendButton: any) {
     nameField.disabled = false;
     messageField.disabled = false;
     sendButton.disabled = false;
-  }
+  };
 
 
-  onInput(inputType: string) {
-    this.updateInputClasses();
-    this.checkFilledInput(inputType);
-    this.showGreenCheck(inputType);
-  }
-
-
-  showGreenCheck(inputType: string) {
-    switch (inputType) {
-      case 'name':
-        this.showGreenCheckName = this.target.value.length > 0;
-        break;
-      case 'email':
-        this.showGreenCheckEmail = this.target.value.length > 0;
-        break;
-      case 'message':
-        this.showGreenCheckMessage = this.target.value.length > 0;
-        break;
-    }
-  }
-
-
-  checkFilledInput(inputType: string) {
-    this.target.value.length > 0 ? this.showRequiredText(inputType) : this.hideRequiredText(inputType);
+  showDefaultButton() {
+    setTimeout(() => this.emailSent = false, 4000);
   }
 
 
   onBlur(event: Event) {
     this.target = event.target as HTMLInputElement;
     this.updateInputClasses();
+  }
+
+
+  onInput(inputType: string) {
+    this.updateInputClasses();
+    this.checkFilledInput(inputType);
+    this.showGreenCheckOnInput(inputType);
   }
 
 
@@ -154,37 +138,48 @@ export class ContactFormComponent {
   }
 
 
-  onFocus(event: Event, inputType: string) {
-    this.target = event.target as HTMLInputElement;
-
-    if (this.target.value.length === 0) {
-      this.target.classList.add('input-bg-warning')
-
-      switch (inputType) {
-        case 'name':
-          this.showWarningName = true;
-          break;
-        case 'email':
-          this.showWarningEmail = true;
-          break;
-        case 'message':
-          this.showWarningMessage = true;
-          break;
-      }
-    }
+  checkFilledInput(inputType: string) {
+    this.target.value.length > 0 ? this.showRequiredTextOnInput(inputType) : this.hideRequiredTextOnInput(inputType);
   }
 
 
-  showRequiredText(inputType: string) {
+  showRequiredTextOnInput(inputType: string) {
     let oneInputField = 'showWarning' + inputType.charAt(0).toUpperCase() + inputType.slice(1);
     this[`${oneInputField}`] = false;
   }
 
-  hideRequiredText(inputType: string) {
+
+  hideRequiredTextOnInput(inputType: string) {
     let oneInputField = 'showWarning' + inputType.charAt(0).toUpperCase() + inputType.slice(1);
     this[`${oneInputField}`] = true;
   }
+
+
+  showGreenCheckOnInput(inputType: string) {
+    let oneInputField = 'showGreenCheck' + inputType.charAt(0).toUpperCase() + inputType.slice(1);
+    this[`${oneInputField}`] = this.target.value.length > 0;
+  }
+
+
+  onFocus(event: Event, inputType: string) {
+    this.target = event.target as HTMLInputElement;
+
+    if (this.target.value.length === 0) {
+      this.target.classList.add('input-bg-warning');
+      this.showRequiredTextOnFocus(inputType);
+    }
+  }
+
+
+  showRequiredTextOnFocus(inputType: any) {
+    let oneInputField = 'showWarning' + inputType.charAt(0).toUpperCase() + inputType.slice(1);
+    this[`${oneInputField}`] = true;
+  }
+
 }
+
+
+
 
 
 
