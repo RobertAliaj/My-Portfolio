@@ -171,11 +171,10 @@ export class ContactFormComponent {
   }
 
 
-  showRequiredTextOnFocus(inputType: any) {
+  showRequiredTextOnFocus(inputType: string) {
     let oneInputField = 'showWarning' + inputType.charAt(0).toUpperCase() + inputType.slice(1);
     this[`${oneInputField}`] = true;
   }
-
 }
 
 
