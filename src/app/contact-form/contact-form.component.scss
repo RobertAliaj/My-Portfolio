@@ -1,3 +1,8 @@
+*:required {
+    background-color: gold;
+}
+
+
 .contact-section {
     display: flex;
     align-items: flex-start;
@@ -21,12 +26,7 @@
             background-position: calc(100% - 20px) 10px !important;
         }
 
-        .input-bg-success {
-            background: url('^assets/img/background-images/input-bg-success.png') no-repeat scroll 7px 7px !important;
-            background-position: calc(100% - 20px) 10px !important;
-        }
-
-        .transparent{
+        .transparent {
             color: transparent;
         }
 
@@ -38,6 +38,7 @@
             padding: 15px 25px;
             background: #141D2F;
             color: white;
+            padding-right: 50px;
         }
 
 
@@ -99,8 +100,14 @@
         }
 
         button {
+            display: grid;
+            place-content: center;
 
             background-color: #00BEE8;
+            width: 250px;
+            height: 60px;
+            transition: 0.2s;
+
             margin-top: 0px;
             margin-left: 0px;
 
@@ -159,8 +166,37 @@ input {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    position: relative;
 
     span {
         color: #E61C40;
+    }
+
+    img {
+        position: absolute;
+        right: 21px;
+        top: 11px;
+
+    }
+}
+
+
+.loader {
+    pointer-events: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #fff;
+    animation: an1 2s ease infinite;
+}
+
+@keyframes an1 {
+    0% {
+        transform: rotate(0turn);
+    }
+
+    100% {
+        transform: rotate(2turn);
     }
 }

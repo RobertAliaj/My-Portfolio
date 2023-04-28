@@ -13,16 +13,26 @@ export class ContactFormComponent {
   @ViewChild('messageField') messageField!: ElementRef;
   @ViewChild('sendButton') sendButton!: ElementRef;
 
+
   showWarningName = false;
   showWarningEmail = false;
   showWarningMessage = false;
+
+  showGreenCheckName = false;
+  showGreenCheckEmail = false;
+  showGreenCheckMessage = false;
+
+
+  showLoader = false;
+  emailSent = false;
+
+  target!: HTMLInputElement;
+
 
 
   constructor() { }
 
   async sendMail() {
-
-    // @Input() playerActive: boolean = false;
 
     // Hier wird auf die Variable zugegriffen (mit nativeElement) und da wird gesagt das alle Felder disabled sein sollen nach dem die Funktion aufgerufen wurde
     // hol die Elemente (das gleiche wie mit "document.getElementById('')")
@@ -62,44 +72,55 @@ export class ContactFormComponent {
 
 
   onInput(event: Event, inputType: string) {
-    const target = event.target as HTMLInputElement;
-    this.updateInputClasses(target);
-    target.value.length > 0 ? this.showRequiredText(inputType) : this.hideRequiredText(inputType);
+    this.target = event.target as HTMLInputElement;
+    this.updateInputClasses();
+    this.target.value.length > 0 ? this.showRequiredText(inputType) : this.hideRequiredText(inputType);
+
+    switch (inputType) {
+      case 'name':
+        this.showGreenCheckName = this.target.value.length > 0;
+        break;
+      case 'email':
+        this.showGreenCheckEmail = this.target.value.length > 0;
+        break;
+      case 'message':
+        this.showGreenCheckMessage = this.target.value.length > 0;
+        break;
+    }
+
   }
 
   onBlur(event: Event) {
-    const target = event.target as HTMLInputElement;
-    this.updateInputClasses(target);
+    this.target = event.target as HTMLInputElement;
+    this.updateInputClasses();
   }
 
-  updateInputClasses(target: HTMLInputElement) {
-    target.value.length > 0 ? this.turnInputFieldToGreen(target) : this.turnInputFieldToRed(target);
+  updateInputClasses() {
+    this.target.value.length > 0 ? this.turnInputFieldToGreen() : this.turnInputFieldToRed();
   }
 
 
 
 
-  turnInputFieldToGreen(target: HTMLInputElement) {
-    target.classList.add('input-bg-success');
-    target.classList.add("has-content");
-    target.classList.remove("empty-focused");
-    target.classList.remove('input-bg-warning');
+  turnInputFieldToGreen() {
+    this.target.classList.add("has-content");
+    this.target.classList.remove("empty-focused");
+    this.target.classList.remove('input-bg-warning');
   }
 
-  turnInputFieldToRed(target: HTMLInputElement) {
-    target.classList.remove("has-content");
-    target.classList.remove('input-bg-success');
-    target.classList.add("empty-focused");
-    target.classList.add('input-bg-warning');
+  turnInputFieldToRed() {
+    this.target.classList.remove("has-content");
+    this.target.classList.add("empty-focused");
+    this.target.classList.add('input-bg-warning');
   }
 
 
   // Diese Funktion checkt das erste 
   onFocus(event: Event, inputType: string) {
-    const target = event.target as HTMLInputElement;
+    this.target = event.target as HTMLInputElement;
 
-    if (target.value.length === 0) {
-      target.classList.add('input-bg-warning')
+    if (this.target.value.length === 0) {
+      this.target.classList.add('input-bg-warning')
 
       switch (inputType) {
         case 'name':
@@ -144,4 +165,23 @@ export class ContactFormComponent {
         break;
     }
   }
+
+  showLoaderFunction() {
+    this.showLoader = true;
+    setTimeout(() => {
+      this.showLoader = false;
+      this.emailSent = true;
+    }, 2000);
+  }
+
+  //   this.sendButton.nativeElement.innerHTML = '<div class="loader"></div>';
+  // setTimeout(() => {
+  //   this.sendButton.nativeElement.innerHTML = 'Email Sent';
+  // }, 2000);
+  //   }
+
 }
+
+
+
+

@@ -7,27 +7,42 @@
         <p>Need a Frontend developer? <b> Contact me! </b></p>
     </div>
 
-    <form (submit)="sendMail()" #myForm ngNativeValidate >
+    <form (submit)="sendMail()" #myForm ngNativeValidate>
 
         <div class="input-parent">
-            <input required type="text" name="name" placeholder="Your name" #nameField (change)="onInput($event, 'name')" 
+            <input required type="text" name="name" placeholder="Your name" #nameField (input)="onInput($event, 'name')"
                 (blur)="onBlur($event)" (focus)="onFocus($event, 'name')">
+
             <span [class.transparent]="!showWarningName">Your name is required</span>
+
+            <img *ngIf="showGreenCheckName" src="assets/img/background-images/input-bg-success.png">
         </div>
 
         <div class="input-parent">
-            <input required type="email" name="email" placeholder="Your email" (change)="onInput($event, 'email')"
+            <input required type="email" name="email" placeholder="Your email" (input)="onInput($event, 'email')"
                 (blur)="onBlur($event)" (focus)="onFocus($event, 'email')">
-            <span [class.transparent]="!showWarningEmail"  >Your email is required</span>
+
+            <span [class.transparent]="!showWarningEmail">Your email is required</span>
+
+            <img *ngIf="showGreenCheckEmail" src="assets/img/background-images/input-bg-success.png">
         </div>
 
         <div class="input-parent">
-            <textarea required type="text" name="message" placeholder="Your message" #messageField (change)="onInput($event, 'message')"
-            (blur)="onBlur($event)" (focus)="onFocus($event, 'message')"></textarea>
-            <span [class.transparent]="!showWarningMessage"  >Your message is empty</span>
+            <textarea required type="text" name="message" placeholder="Your message" #messageField
+                (input)="onInput($event, 'message')" (blur)="onBlur($event)"
+                (focus)="onFocus($event, 'message')"></textarea>
+
+            <span [class.transparent]="!showWarningMessage">Your message is empty</span>
+
+            <img *ngIf="showGreenCheckMessage" src="assets/img/background-images/input-bg-success.png">
         </div>
 
-        <button class="contact-button" #sendButton type="submit">Send Message :) </button>
+        <button class="contact-button send-button" #sendButton type="submit" (click)="showLoaderFunction()">
+            <span *ngIf="!showLoader && !emailSent">Send Message</span>
+            <span *ngIf="emailSent && !showLoader">Thank You :) </span>
+            <div class="loader" *ngIf="showLoader"></div>
+        </button>
+
     </form>
 
 </div>
