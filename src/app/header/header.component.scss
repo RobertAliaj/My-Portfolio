@@ -8,9 +8,9 @@
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    padding: 0 110px 0 110px;
+    padding: 0 10% 0 10%;
     background-color: rgb(20, 29, 47);
-    font-size: 24px;
+    font-size: 1.5rem;
     z-index: 999;
 
     img {
@@ -55,13 +55,5 @@
                 width: 40%;
             }
         }
-    
-        // &:focus {
-        //     color: #00BEE8;
-    
-        //     &:after {
-        //         width: 100%;
-        //     }
-        // }
     }
 }

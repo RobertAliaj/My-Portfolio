@@ -1,4 +1,14 @@
 {
-    "FRONTEND DEVELOPER": "FRONTEND DEVELOPER",
-    "About me":"About me"
+	"About me": "About me",
+	"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aliquam quis hic inventore tempore praesentium adipisci, doloremque vero minima officiis sit id sequi, in quisquam possimus quidem ducimus? Nisi, ex?": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aliquam quis hic inventore tempore praesentium adipisci, doloremque vero minima officiis sit id sequi, in quisquam possimus quidem ducimus? Nisi, ex?",
+	"Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio vel delectus rem illum labore officiis ex accusantium placeat eos qui. Ullam, odio provident tenetur deleniti atque fuga hic sint consequatur.": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio vel delectus rem illum labore officiis ex accusantium placeat eos qui. Ullam, odio provident tenetur deleniti atque fuga hic sint consequatur.",
+	"Skills": "Skills",
+	"Portfolio": "Portfolio",
+	"I am": "I am",
+	"FRONTEND DEVELOPER": "FRONTEND DEVELOPER",
+	"Let's talk!": "Let's talk!",
+	"Scroll down": "Scroll down",
+	"My Skills": "My Skills",
+	"I have grown my frontend developments skills that have allowed me to create different real projects.": "I have grown my frontend developments skills that have allowed me to create different real projects.",
+	"Get in touch": "Get in touch"
 }
