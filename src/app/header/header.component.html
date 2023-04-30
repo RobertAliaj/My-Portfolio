@@ -1,14 +1,20 @@
 <div class="header">
 
     <a href="#">
-        <img src="assets/img/logo.png">
+        <img class="logo" src="assets/img/logo.png">
     </a>
 
     <div class="links">
         <a href="#about" translate>About me</a>
         <a href="#skills" translate>Skills</a>
         <a href="#portfolio" translate>Portfolio </a>
-            <a (click)="translate.use('de');">DE </a> |
-            <a (click)="translate.use('en');">EN </a>
+        <img class="translateImg" src="assets/img/german-flag.jpg" (click)="translate.use('de');" (click)="germanImg()"
+            *ngIf="german">
+        <img class="translateImg" src="assets/img/english-flag.jpg" (click)="translate.use('en');"
+            (click)="englishImg()" *ngIf="!german">
+    </div>
+
+    <div class="menu-btn" #menuBtn>
+        <div class="menu-btn-burger"></div>
     </div>
 </div>
