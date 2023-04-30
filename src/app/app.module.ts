@@ -18,6 +18,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ProjectsComponent } from './projects/projects.component';
+import { SlideOutMenuComponent } from './slide-out-menu/slide-out-menu.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -39,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     MainComponent,
     ProjectsComponent,
+    SlideOutMenuComponent,
   ],
   imports: [
     BrowserModule,

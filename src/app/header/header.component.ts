@@ -24,18 +24,19 @@ export class HeaderComponent implements AfterViewInit {
     let menuBtn = this.menuBtn.nativeElement;
 
     menuBtn.addEventListener('click', () => {
-      !this.menuOpen ? this.openMenu(menuBtn) : this.closeMenu(menuBtn);
+      menuBtn.classList.toggle('open');
+      // !this.menuOpen ? this.openMenu(menuBtn) : this.closeMenu(menuBtn);
     });
   }
 
 
   openMenu(menuBtn: HTMLElement) {
-    menuBtn.classList.add('open');
+    // menuBtn.classList.add('open');
     this.menuOpen = true;
   }
 
   closeMenu(menuBtn: HTMLElement) {
-    menuBtn.classList.remove('open');
+    // menuBtn.classList.remove('open');
     this.menuOpen = false;
   }
 
