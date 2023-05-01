@@ -13,10 +13,7 @@
         <a href="#about" translate>About me</a>
         <a href="#skills" translate>Skills</a>
         <a href="#portfolio" translate>Portfolio </a>
-        <img class="translateImg" src="assets/img/german-flag.jpg" (click)="translate.use('de');" (click)="germanImg()"
-            *ngIf="german">
-        <img class="translateImg" src="assets/img/english-flag.jpg" (click)="translate.use('en');"
-            (click)="englishImg()" *ngIf="!german">
 
+        <img class="translateImg" [src]="flagSrc" (click)="toggleLanguage()"/>
     </div>
 </div>

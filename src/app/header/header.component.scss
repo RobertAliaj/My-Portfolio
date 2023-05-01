@@ -11,7 +11,7 @@
     padding: 0 10% 0 10%;
     width: 100%;
     background-color: rgb(20, 29, 47);
-    z-index: 999;
+    z-index: 50;
 
     @media (max-width: 850px) {
         padding: 0 5% 0 5%;
@@ -24,14 +24,17 @@
     width: 300px;
     object-fit: contain;
 
+    @media (max-width: 950px) {
+        width: 30vw;
+    }
+
     @media (max-width: 850px) {
         width: 30vw;
     }
 
     @media (max-width: 600px) {
-        width: 40vw;
+        width: 42vw;
     }
-
 
     @media (max-width: 450px) {
         display: none;
@@ -39,8 +42,7 @@
 }
 
 .logo-small{
-    width: 80px;
-    height: 80px;
+    width: 15vw;
     object-fit: contain;
 
     @media (min-width: 450px) {
@@ -70,9 +72,13 @@
     width: max-content !important;
     gap: 30px;
 
-    @media (max-width: 850px) {
+    @media (max-width: 950px) {
         gap: 30px;
+    }
 
+
+    @media (max-width: 850px) {
+        gap: 25px;
     }
 
     @media (max-width: 768px) {

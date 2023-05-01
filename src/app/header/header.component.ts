@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,16 +10,17 @@ import { TranslateService } from '@ngx-translate/core';
 
 export class HeaderComponent {
 
-  constructor(public translate: TranslateService) { }
-
   german = false;
-  menuOpen = false;
+  flagSrc = 'assets/img/german-flag.jpg';
 
-  germanImg() {
-    this.german = false;
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['en', 'de']);
+    translate.setDefaultLang('en');
   }
 
-  englishImg() {
-    this.german = true;
+  toggleLanguage() {
+    this.german = !this.german;
+    this.translate.use(this.german ? 'de' : 'en');
+    this.flagSrc = this.german ? 'assets/img/english-flag.jpg' : 'assets/img/german-flag.jpg';
   }
 }

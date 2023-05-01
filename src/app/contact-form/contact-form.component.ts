@@ -176,22 +176,3 @@ export class ContactFormComponent {
     this[`${oneInputField}`] = true;
   }
 }
-
-
-
-
-
-
-  // showRequiredText(inputType: string) {
-  //   switch (inputType) {
-  //     case 'name':
-  //       this.showWarningName = false;
-  //       break;
-  //     case 'email':
-  //       this.showWarningEmail = false;
-  //       break;
-  //     case 'message':
-  //       this.showWarningMessage = false;
-  //       break;
-  //   }
-  // }
