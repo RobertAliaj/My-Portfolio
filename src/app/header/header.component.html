@@ -1,8 +1,13 @@
 <div class="header">
 
-    <a href="#">
+    <a href="#" class="logo">
         <img class="logo" src="assets/img/logo.png">
     </a>
+
+    <a href="#" class="logo-small">
+        <img class="logo-small" src="assets/img/logo-small.png">
+    </a>
+
 
     <div class="links">
         <a href="#about" translate>About me</a>
@@ -12,9 +17,6 @@
             *ngIf="german">
         <img class="translateImg" src="assets/img/english-flag.jpg" (click)="translate.use('en');"
             (click)="englishImg()" *ngIf="!german">
-    </div>
 
-    <div class="menu-btn" #menuBtn>
-        <div class="menu-btn-burger"></div>
     </div>
 </div>

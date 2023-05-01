@@ -14,7 +14,7 @@
     z-index: 999;
 
     @media (max-width: 850px) {
-    padding: 0 5% 0 5%;
+        padding: 0 5% 0 5%;
     }
 }
 
@@ -30,6 +30,21 @@
 
     @media (max-width: 600px) {
         width: 40vw;
+    }
+
+
+    @media (max-width: 450px) {
+        display: none;
+    }
+}
+
+.logo-small{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+
+    @media (min-width: 450px) {
+        display: none;
     }
 }
 
@@ -101,75 +116,3 @@
         }
     }
 }
-
-
-
-// Hamburger Menu
-.menu-btn {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    // transition: all .5s ease-in-out;
-    // border: 3px solid #fff;
-    // border-radius: 10px;
-
-    @media (min-width: 600px) {
-        display: none;
-    }
-}
-
-.menu-btn-burger {
-    width: 30px;
-    height: 3px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-    transition: all 225ms ease-in-out;
-}
-
-.menu-btn-burger::before,
-.menu-btn-burger::after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-    transition: all 225ms ease-in-out;
-}
-
-
-.menu-btn-burger::before {
-    transform: translateY(-8px);
-}
-
-.menu-btn-burger::after {
-    transform: translateY(8px);
-}
-
-
-.menu-btn.open .menu-btn-burger {
-    /* transform: translate(0px); */
-    background: transparent;
-    box-shadow: none;
-}
-
-
-.menu-btn.open .menu-btn-burger::before {
-    transform: rotate(45deg);
-}
-
-
-.menu-btn.open .menu-btn-burger::after {
-    transform: rotate(-45deg);
-}
-
-
-
-
-
