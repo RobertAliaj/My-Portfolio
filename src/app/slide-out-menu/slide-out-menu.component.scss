@@ -1,11 +1,92 @@
-// style für das menu + bei transition wird definiert wie schnell das ganze passieren soll
-.menu {
+// this part is about the burger button (three lines)
+.burger-btn-div {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 53;
+    padding-right: 5%;
+
+    @media (min-width: 600px) {
+        display: none;
+    }
+
+    @media (max-width: 480px) {
+        padding-right: 8%;
+    }
+}
+
+
+.burger-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    z-index: 54;
+
+
+    @media (min-width: 600px) {
+        display: none;
+    }
+}
+
+.burger-middle-line {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all 225ms ease-in-out;
+}
+
+.burger-middle-line::before,
+.burger-middle-line::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all 225ms ease-in-out;
+}
+
+.burger-middle-line::before {
+    transform: translateY(-8px);
+}
+
+.burger-middle-line::after {
+    transform: translateY(8px);
+}
+
+.burger-btn.open .burger-middle-line {
+    background: transparent;
+    box-shadow: none;
+
+    &::before {
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+    }
+}
+
+
+// this is about the slide-in/out menu
+.slide-out-menu {
     position: fixed;
     top: 0px;
     right: -100%;
     width: 100%;
     height: 100%;
-    background-color: rgb(20 29 47 / 80%);
+    background-color: rgba(30, 35, 60, 0.8);
     overflow: hidden;
     transition: right 0.6s;
     z-index: 52;
@@ -17,34 +98,27 @@
     }
 }
 
-
 // bis wo das Menu kommen soll 
-.menu.open {
+.open {
     right: 0;
 }
 
-// style für die ul
-.menu ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-
-// style für die li
-.menu ul li {
-    // border-bottom: 1px solid #444;
+li {
     opacity: 0;
+    margin-bottom: 15px;
 }
 
-
 // Wie schnell die Links-Animation ausgeführt wird
-.menu.open ul li {
+.slide-out-menu.open ul li {
     animation: slideInLinks 0.9s forwards;
 }
 
-
-// Animation für die Links
 @keyframes slideInLinks {
     0% {
         opacity: 0;
@@ -62,9 +136,7 @@
     }
 }
 
-
-// die a Elemente Stylen
-.menu ul li a {
+a {
     display: block;
     padding: 10px 20px;
     font-size: 2rem;
@@ -75,6 +147,11 @@
     transition: all 225ms ease-in-out;
     outline: none;
     width: max-content !important;
+    width: 100%;
+
+    @media(max-width:480px) {
+        font-size: 3rem;
+    }
 
     &:after {
         content: '';
@@ -98,85 +175,9 @@
     }
 }
 
-
-.menu-btn-div{
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    z-index: 53;
-    padding-right: 5%;
-
-    @media (min-width: 600px) {
-        display: none;
-    }
-}
-
-
-// Hamburger Menu
-.menu-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.flag-img {
+    padding: 10px 20px;
+    width: 80px;
+    object-fit: contain;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
-    z-index: 54;
-
-
-    @media (min-width: 600px) {
-        display: none;
-    }
-}
-
-.menu-btn-burger {
-
-    width: 30px;
-    height: 3px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-    transition: all 225ms ease-in-out;
-}
-
-.menu-btn-burger::before,
-.menu-btn-burger::after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-    transition: all 225ms ease-in-out;
-}
-
-
-.menu-btn-burger::before {
-    transform: translateY(-8px);
-}
-
-.menu-btn-burger::after {
-    transform: translateY(8px);
-}
-
-
-.menu-btn.open .menu-btn-burger {
-    /* transform: translate(0px); */
-    background: transparent;
-    box-shadow: none;
-}
-
-
-.menu-btn.open .menu-btn-burger::before {
-    transform: rotate(45deg);
-}
-
-
-.menu-btn.open .menu-btn-burger::after {
-    transform: rotate(-45deg);
 }

@@ -1,18 +1,20 @@
-<div class="menu" #menu>
+<div class="slide-out-menu" #menu>
     <ul>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#skills">My Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a routerLink="/imprint">Imprint</a></li>
+        <li><a href="#about" translate>About me</a></li>
+        <li><a href="#skills" translate>My Skills</a></li>
+        <li><a href="#portfolio" translate>Portfolio</a></li>
+        <li><a href="#contact" translate>Contact</a></li>
+        <li><a routerLink="/imprint" translate>Imprint</a></li>
+        <li>
+            <img class="flag-img" [src]="header.flagSrc" (click)="header.toggleLanguage()" />
+        </li>
     </ul>
 </div>
 
-<div class="menu-btn-div">
-    <div class="menu-btn" #menuBtn>
-        <div class="menu-btn-burger"></div>
+<div class="burger-btn-div">
+    <div class="burger-btn" #menuBtn>
+        <div class="burger-middle-line"></div>
     </div>
 </div>
 
-
-<!-- <div style="width: 80px; height: 80px; border: 3px solid white; position: absolute; top: 200px; left: 0; cursor: pointer;" (click)="toggleMenu()"></div> -->
+<app-header #header></app-header>
