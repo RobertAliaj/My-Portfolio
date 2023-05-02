@@ -11,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent {
 
   german = false;
-  flagSrc = 'assets/img/german-flag.jpg';
+  flagSrc = 'assets/img/german-flag.webp';
 
   constructor(public translate: TranslateService) {
     translate.addLangs(['en', 'de']);
@@ -21,6 +21,6 @@ export class HeaderComponent {
   toggleLanguage() {
     this.german = !this.german;
     this.translate.use(this.german ? 'de' : 'en');
-    this.flagSrc = this.german ? 'assets/img/english-flag.jpg' : 'assets/img/german-flag.jpg';
+    this.flagSrc = this.german ? 'assets/img/english-flag.webp' : 'assets/img/german-flag.webp';
   }
 }

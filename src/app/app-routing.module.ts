@@ -5,7 +5,7 @@ import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'imprint', component: ImprintComponent }
+  { path: 'imprint', component: ImprintComponent },
 ];
 
 
