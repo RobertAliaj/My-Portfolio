@@ -9,29 +9,6 @@ html {
 }
 
 
-@media (max-width: 850px) {
-    html {
-        font-size: 14px;
-    }
-}
-
-
-@media (max-width: 600px) {
-    html {
-        font-size: 12px;
-    }
-}
-
-
-
-@media (max-width: 480px) {
-    html {
-        font-size: 10px;
-    }
-}
-
-
-
 body {
     margin: 0;
     background-color: rgb(20, 29, 47);
@@ -49,7 +26,6 @@ a,
 button,
 img {
     transition: all 125ms ease-in-out;
-
 }
 
 .button,
@@ -65,7 +41,7 @@ img {
     padding: 15px 30px;
     gap: 10px;
     border: none;
-    font-size: 23px;
+    font-size: clamp(1.125rem, 1.042763157894737rem + 0.41118421052631576vw, 1.4375rem);
     line-height: 120%;
     color: white;
     cursor: pointer;
@@ -73,21 +49,14 @@ img {
     margin-left: 150px;
     text-decoration: none;
 
-    @media(max-width: 1300px){
-        margin-top: 25px;
-        margin-left: 130px;
+    @media(max-width: 1300px) {
+        margin-top: clamp(6%, 8.412698412698413px + 1.746031746031746vw, 5%);
     }
 
-
-    @media(max-width: 950px){
-        margin-top: 10%;
-        margin-left: 0px;
+    @media(max-width: 950px) {
+        margin-left: 0;
     }
 
-    @media(max-width: 850px){
-        margin-top: 6%;
-        margin-left: 0px;
-    }
 }
 
 .button::before {

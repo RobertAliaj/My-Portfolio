@@ -5,22 +5,28 @@ section {
     align-items: center;
     padding: 0 10% 0 10%;
     background-image: url('^assets/img/background-images/introduction-green.webp'), url('^assets/img/background-images/introduction-purple.webp');
-    background-position: left 199px top 20px, left -13px top 54px;
+    background-position: left 200px top 20px, left -20px top 54px;
     background-repeat: no-repeat;
     position: relative;
     scroll-margin-top: 120px;
 }
 
+
 .introduction-img {
     width: 32vw;
+    opacity: 0;
 }
+
 
 .vector-img {
     width: calc(100vw - 20px);
-    margin-top: -470px;
+    position: absolute;
+    top: clamp(28%, 17.730375426621166px + 10.238907849829351vw, 28%);
 }
 
 .vector-img-responsive {
+    position: absolute;
+    top: clamp(250px, 161.11111111111111px + 27.77777777777778vw, 425px);
     width: calc(100vw - 20px);
 }
 
@@ -34,10 +40,7 @@ section {
 .introduction-text {
     position: relative;
     color: white;
-    display: flex;
     margin-bottom: 120px;
-    margin-left: -82px;
-    font-weight: 400 !important;
     z-index: 10;
 }
 
@@ -49,21 +52,22 @@ section {
     transform: rotate(-90deg);
     margin-right: -31px;
     width: max-content;
-    font-size: 3.8rem;
+    font-size: clamp(2.6rem, 0.6343430034129696rem + 3.3105802047781565vw, 3.8125rem);
     margin-top: 57px;
     height: fit-content;
-    margin: 52px 0px 0px 0px;
+    margin-top: 9%;
+    left: -19%;
 }
 
 .name {
     font-weight: 900;
-    font-size: 4.4rem;
+    font-size: clamp(2.875rem, 0.44325938566552914rem + 4.09556313993174vw, 4.375rem);
 }
 
 .color-title {
     color: #4B47FF;
     width: max-content;
-    font-size: 3.1rem;
+    font-size: clamp(2rem, 0.17619453924914685rem + 3.0716723549488054vw, 3.125rem);
 }
 
 .name-parent {
@@ -80,7 +84,7 @@ section {
 
 .left-line {
     background: #4B47FF;
-    width: 110px;
+    width: clamp(30px, 8.947368421052634px + 6.578947368421052vw, 110px);
     height: 4px;
 }
 
@@ -92,9 +96,10 @@ section {
     justify-content: space-between;
     width: 100%;
     position: absolute;
-    top: 55%;
+    top: clamp(113%, 60.92150170648466px + 40.955631399317404vw, 108%);
     padding-right: 10%;
 }
+
 
 .links {
     display: flex;
@@ -134,13 +139,13 @@ section {
 
 .background-purple {
     position: absolute;
-    bottom: 0px;
     right: 0;
+    top: 100%;
     background-image: url('^assets/img/background-images/introduction-purple2.webp');
     background-repeat: no-repeat;
-    z-index: 20;
-    width: 303px;
     background-size: cover;
+    z-index: 20;
+    width: clamp(200px, 173.68421052631578px + 8.223684210526317vw, 300px);
     height: 600px;
 }
 
@@ -157,76 +162,26 @@ section {
 }
 
 
-@media(max-width: 1300px) {
-    .introduction-img {
-        width: 46vw;
-    }
-
-    .vector-img {
-        margin-top: -38%;
-    }
-
-    .introduction-text {
-        margin-bottom: 180px;
-    }
-
-    .translate {
-        font-size: 2.6rem;
-        margin: 10% 0px 0px 0px;
-        left: -22%;
-    }
-
-    .name {
-        font-size: 2.9rem;
-    }
-
-    .color-title {
-        font-size: 2rem;
-    }
-
-    .background-purple {
-        bottom: -30%;
-        background-size: auto 100%;
-        width: 30%;
-        height: 80%;
-    }
-
-    .links-parent{
-        top: 65%;
-    }
-}
-
-
-@media(max-width: 1100px) {
-    section {
-        background-position: left 44px top 11px, left -103px top 67px;
-    }
-
-
-    .left-line-parent {
-        width: 80%;
-    }
-}
-
-
 @media(max-width: 950px) {
     section {
         background-position: left 69% top 15%, left 23% top 10%;
-        background-size: auto 75%;
+        background-size: 75%;
     }
 
     .introduction-img {
-        width: 55vw;
+        width: clamp(224px, 125.46031746031746px + 30.793650793650794vw, 418px);
     }
 
     .vector-img {
         display: none;
     }
 
-    .vector-img-responsive {
-        position: absolute;
-        top: 57%;
-    }
+
+    // Wenn das rein kommt passt es beim HAndy, dafür aber beim Normalen Bildschirm nicht mehr
+
+    // .vector-img-responsive {
+        // width: calc(100vw - clamp(0px, -10.158730158730158px + 3.1746031746031744vw, 20px));
+    // }
 
     .introduction-parent {
         flex-direction: column;
@@ -237,17 +192,15 @@ section {
     }
 
     .translate {
-        font-size: 3.7rem;
-        margin: 10% 0px 0px 0px;
-        left: -18%;
+        font-size: clamp(1.5625rem, 0.14583333333333348rem + 5.964912280701754vw, 3.6875rem);
     }
 
     .name {
-        font-size: 4.5rem;
+        font-size: clamp(1.8125rem, 0.02083333333333326rem + 7.5438596491228065vw, 4.5rem);
     }
 
     .color-title {
-        font-size: 3.1rem;
+        font-size: clamp(1.25rem, 0.016666666666666607rem + 5.192982456140351vw, 3.1rem);
     }
 
     .name-parent {
@@ -271,13 +224,6 @@ section {
     .scroll-down {
         display: none;
     }
-
-    .background-purple {
-        height: 45%;
-        width: 20%;
-        bottom: -36%;
-        background-size: auto 100%;
-    }
 }
 
 
@@ -289,109 +235,19 @@ section {
 
 
 @media(max-width: 850px) {
-
     section {
         padding: 0 5% 0 5%;
-    }
-
-    .vector-img-responsive {
-        top: 57%;
-    }
-
-    .name {
-        font-size: 4.5rem;
     }
 }
 
 
 @media(max-width: 650px) {
 
-    .name {
-        font-size: 3.9rem;
-    }
-
-    .color-title {
-        font-size: 2.8rem;
-    }
-
     .translate {
-        font-size: 3.2rem;
-        margin: 9% 0px 0px 0px;
-    }
-
-    .introduction-text {
-        margin: 0 -6% 0 0;
+        left: -21%;
     }
 
     .links-parent {
         top: 110%;
     }
-
-    .introduction-img {
-        width: 60vw;
-    }
-
-
-    .background-purple {
-        position: absolute;
-        top: 100%;
-        height: 100%;
-        width: 40%;
-    }
-}
-
-
-@media(max-width: 450px) {
-
-    .name {
-        font-size: 3.2rem;
-    }
-
-    .color-title {
-        font-size: 2.2rem;
-    }
-
-    .translate {
-        font-size: 2.2rem;
-        margin: 9% 0px 0px 0px;
-    }
-
-    .vector-img-responsive {
-        width: calc(100vw - 0px);
-    }
-}
-
-
-@media(max-width: 380px) {
-
-    .left-line{
-        width: 30px;
-    }
-
-    .introduction-img {
-        width: 70vw;
-    }
-
-    .vector-img-responsive {
-        top: 58%;
-    }
-
-    .name {
-        font-size: 2.8rem;
-    }
-
-    .color-title {
-        font-size: 1.9rem;
-    }
-
-    .translate {
-        font-size: 2.3rem;
-        margin: 9% 0px 0px 0px;
-        left: -21%;
-    }
-
-    .introduction-text {
-        margin-left: 0;
-    }
-
 }
