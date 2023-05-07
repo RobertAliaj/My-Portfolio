@@ -1,17 +1,13 @@
-*:required {
-    background-color: gold;
-}
-
-
 .contact-section {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     width: 100%;
-    padding: 0 110px 0 110px;
+    padding: 0 10% 0 10%;
     position: relative;
     color: white;
     margin-top: 70px;
+    margin-bottom: 200px;
 
     form {
         display: flex;
@@ -22,7 +18,7 @@
 
 
         .input-bg-warning {
-            background: url('^assets/img/background-images/input-bg.png') no-repeat scroll 7px 7px !important;
+            background: url('^assets/img/background-images/input-bg.webp') no-repeat scroll 7px 7px !important;
             background-position: calc(100% - 20px) 10px !important;
         }
 
@@ -102,12 +98,9 @@
         button {
             display: grid;
             place-content: center;
-
             background-color: #00BEE8;
-            width: 250px;
-            height: 60px;
+            width: clamp(200px, 186.8421052631579px + 4.111842105263158vw, 250px);
             transition: 0.2s;
-
             margin-top: 0px;
             margin-left: 0px;
 
@@ -117,9 +110,9 @@
                 transition: all 125ms ease-in-out;
             }
         }
-
     }
 }
+
 
 .contact-text {
     display: flex;
@@ -130,13 +123,13 @@
 
     span {
         font-weight: 700;
-        font-size: 32px;
+        font-size: clamp(1.75rem, 1.6842105263157894rem + 0.3289473684210526vw, 2rem);
         width: 70%;
     }
 
     p {
         font-weight: 400;
-        font-size: 16px;
+        font-size: clamp(1rem, 0.9671052631578947rem + 0.1644736842105263vw, 1.125rem);
         line-height: 120%;
         width: 70%;
     }
@@ -188,15 +181,41 @@ input {
     border-radius: 50%;
     border: 3px solid transparent;
     border-top-color: #fff;
-    animation: an1 2s ease infinite;
+    animation: loaderAnimation 2s ease infinite;
 }
 
-@keyframes an1 {
+@keyframes loaderAnimation {
     0% {
         transform: rotate(0turn);
     }
 
     100% {
         transform: rotate(2turn);
+    }
+}
+
+
+
+@media(max-width: 950px) {
+
+    .contact-section {
+        padding: 0 5% 0 5%;
+        flex-direction: column;
+
+        form {
+            width: 100%;
+        }
+    }
+
+    .contact-text {
+        width: 100%;
+
+        span {
+            width: 100%;
+        }
+
+        p {
+            width: 100%;
+        }
     }
 }
