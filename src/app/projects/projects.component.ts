@@ -14,7 +14,7 @@ export class ProjectsComponent {
       title: 'El Pollo Loco',
       skills: ['JavaScript', 'HTML', 'CSS', 'Backend'],
       description: [
-        'A simple Jump-and-Run game based on an object-oriented approach.<br> Help Pepe Peligroso to win his live or die fight again the chickens',
+        'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe Peligroso to win his live or die fight again the chickens',
       ],
       image: 'Pollo loco 1.png',
       links: [
@@ -26,7 +26,7 @@ export class ProjectsComponent {
       title: 'Join',
       skills: ['JavaScript', 'HTML', 'CSS', 'Backend'],
       description: [
-        'A simple Jump-and-Run game based on an object-oriented approach.<br> Help Pepe Peligroso to win his live or die fight again the chickens',
+        'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe Peligroso to win his live or die fight again the chickens',
       ],
       image: 'Pollo loco 1.png',
       links: [
@@ -37,7 +37,7 @@ export class ProjectsComponent {
       title: 'CRM Project',
       skills: ['JavaScript', 'HTML', 'CSS', 'Backend'],
       description: [
-        'A simple Jump-and-Run game based on an object-oriented approach.<br> Help Pepe Peligroso to win his live or die fight again the chickens',
+        'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe Peligroso to win his live or die fight again the chickens',
       ],
       image: 'Pollo loco 1.png',
       links: [
@@ -48,7 +48,7 @@ export class ProjectsComponent {
       title: 'CRM Project',
       skills: ['JavaScript', 'HTML', 'CSS', 'Backend'],
       description: [
-        'A simple Jump-and-Run game based on an object-oriented approach.<br> Help Pepe Peligroso to win his live or die fight again the chickens',
+        'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe Peligroso to win his live or die fight again the chickens',
       ],
       image: 'Pollo loco 1.png',
       links: [

@@ -8,7 +8,6 @@
         <div [ngClass]="{'project-description-reverse': i % 2 == 1, 'project-description': i % 2 == 0}">
             <span class="project-name">{{ project.title }}</span>
 
-
             <span class="project-tech">
                 <ng-container *ngFor="let skill of project.skills let isLast=last">
                     {{ skill }}{{isLast ? '' : ' | '}}
@@ -24,5 +23,5 @@
         </div>
     </div>
 
-    <img class="background" src="assets/img/background-images/bg-green-p.webp">
+    <!-- <img class="background" src="assets/img/background-images/bg-green-p.webp"> -->
 </section>

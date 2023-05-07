@@ -27,7 +27,7 @@ section {
 .vector-img-responsive {
     position: absolute;
     top: clamp(250px, 161.11111111111111px + 27.77777777777778vw, 425px);
-    width: calc(100vw - 20px);
+    width: 100%;
 }
 
 .introduction-parent {
@@ -180,6 +180,7 @@ section {
     // Wenn das rein kommt passt es beim HAndy, dafür aber beim Normalen Bildschirm nicht mehr
 
     // .vector-img-responsive {
+        // width: 100%;
         // width: calc(100vw - clamp(0px, -10.158730158730158px + 3.1746031746031744vw, 20px));
     // }
 
@@ -188,7 +189,8 @@ section {
     }
 
     .introduction-text {
-        margin: 0 -5% 0 0;
+        
+        margin: 5% -5% 0 0;
     }
 
     .translate {

@@ -6,8 +6,6 @@ section {
     margin-top: 200px;
     position: relative;
     scroll-margin-top: 170px;
-    margin-bottom: 200px;
-
 }
 
 .description {
@@ -46,6 +44,7 @@ section {
 
 .skills-button {
     margin: 0 clamp(35px, -54.16382252559727px + 9.385665529010238vw, 90px) 0 0;
+    width: max-content;
 }
 
 .background {
@@ -95,13 +94,20 @@ section {
 
     .blue-line-right {
         top: clamp(26px, 18.88888888888889px + 2.2222222222222223vw, 40px);
-        ;
         width: clamp(13px, 2.333333333333334px + 3.3333333333333335vw, 34px);
     }
 
-    .background{
+    .background {
+        height: clamp(500px, 418.73015873015873px + 25.396825396825395vw, 660px);
+        width: clamp(450px, 353.4920634920635px + 30.158730158730158vw, 640px);
+        left: clamp(-340px, -197.77777777777777px + -44.44444444444444vw, -620px);
         top: 400px;
-        left: clamp(-650px, -700.7936507936508px + 15.873015873015872vw, -550px);;
     }
+}
 
+
+@media(max-width: 480px){
+    .background{
+        top: 490px;
+    }
 }

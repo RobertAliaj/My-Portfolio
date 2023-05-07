@@ -14,13 +14,18 @@ body {
     background-color: rgb(20, 29, 47);
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    // background-image: url(assets/img/background-images/Contact-form-bg.webp);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left bottom;
-    background-size: 650px;
-}
+    // background-image: url('^assets/img/background-images/Contact-form-bg.webp');
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // background-position: left bottom;
+    // background-size: 650px;
 
+    // background-image: url('^assets/img/background-images/crop.webp');
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // background-position: left bottom;
+    // background-size: 400px;
+}
 
 a,
 button,
@@ -56,7 +61,6 @@ img {
     @media(max-width: 950px) {
         margin-left: 0;
     }
-
 }
 
 .button::before {

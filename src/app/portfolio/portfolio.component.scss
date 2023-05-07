@@ -11,22 +11,41 @@
     span {
         display: inline-block;
         font-weight: 900;
-        font-size: 70px;
+        font-size: clamp(2rem, 1.375rem + 3.125vw, 4.375rem);
         padding: 0 20px 0 20px;
         z-index: 15;
         background-color: rgb(20, 29, 47);
+    }
+
+
+    p {
+        font-size: clamp(1rem, 0.9671052631578947rem + 0.1644736842105263vw, 1.125rem);
     }
 }
 
 
 .blue-line {
-    width: 75%;
+    width: 75vw;
     height: 5px;
     background-color: #4B47FF;
     position: absolute;
     right: 0;
-    top: 50px;
+    top: clamp(25px, 16.842105263157897px + 2.549342105263158vw, 56px);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+
+}
+
+
+@media(max-width: 950px) {
+
+    .blue-line {
+        width: clamp(272px, 48.507936507936506px + 69.84126984126983vw, 712px);
+    }
+
+    .portfolio-section {
+        padding: 0 5% 0 5%;
+        text-align: center;
+    }
 
 }
