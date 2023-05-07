@@ -5,16 +5,16 @@
     color: white;
     position: relative;
     margin-top: 200px;
-    padding: 0 110px 0 90px;
+    padding: 0 0 0 10%;
+    margin-bottom: 200px;
 
     span {
         display: inline-block;
         font-weight: 900;
-        font-size: 70px;
+        font-size: clamp(2rem, 1.375rem + 3.125vw, 4.375rem);
         padding: 0 20px 0 20px;
         z-index: 15;
         background-color: rgb(20, 29, 47);
-        // margin-left: 50px;
     }
 }
 
@@ -25,12 +25,21 @@
     background-color: #4B47FF;
     position: absolute;
     left: 0;
-    top: 50px;
+    top: clamp(1.5rem, 1.0723684210526316rem + 2.138157894736842vw, 3.125rem);
 }
 
 .section {
-	// color: #ffffff;
-	// height: ;
-	// margin: 0;
-	scroll-margin-top: 100px;
+    scroll-margin-top: 100px;
+}
+
+
+@media(max-width: 950px) {
+    .contact-section {
+        padding: 0 0 0 5%;
+
+        span {
+            padding: 0 0 0 5px;
+        }
+    }
+
 }
