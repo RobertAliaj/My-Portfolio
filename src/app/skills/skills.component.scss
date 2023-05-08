@@ -62,7 +62,8 @@ section {
     width: clamp(30px, 8.947368421052634px + 6.578947368421052vw, 110px);
     background: #4B47FF;
     height: 4px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 

@@ -7,7 +7,6 @@
     position: relative;
     color: white;
     margin-top: 70px;
-    margin-bottom: 200px;
 
     form {
         display: flex;
@@ -184,6 +183,7 @@ input {
     animation: loaderAnimation 2s ease infinite;
 }
 
+
 @keyframes loaderAnimation {
     0% {
         transform: rotate(0turn);
@@ -193,7 +193,6 @@ input {
         transform: rotate(2turn);
     }
 }
-
 
 
 @media(max-width: 950px) {

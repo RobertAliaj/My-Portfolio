@@ -1,23 +1,18 @@
-.footer-section {
-    // position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+footer {
     z-index: 25;
     border-top: 5px solid #00BEE8;
     width: 100%;
     margin-top: 200px;
     background-color: rgb(20, 29, 47);
-    padding: 110px 110px 110px 110px;
+    padding: 80px 10% 80px 10%;
     color: white;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     font-style: normal;
     font-weight: 400;
     font-size: 23px;
     line-height: 120%;
-
 }
 
 .logo-parent {
@@ -29,7 +24,7 @@
 
     img {
         cursor: pointer;
-        width: 300px;
+        width: clamp(176px, 151.2631578947px + 7.7302631579vw, 270px);
         object-fit: contain;
     }
 
@@ -94,5 +89,57 @@
     a:hover {
         scale: 1.2;
         transition: all 125ms ease-in-out;
+    }
+}
+
+
+@media(max-width: 950px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        padding: 50px 5% 100px 5%;
+        gap: 25px;
+    }
+
+    footer div{
+        width: 100%;
+    }
+
+    .imprint {
+        position: absolute;
+        bottom: 50px;
+        margin: 0;
+    }
+
+    .links{
+        padding: 0;
+        justify-content: center;
+        gap: 10%;
+    }
+
+    .logo-parent{
+        align-items: center;
+
+        img{
+            width: 350px;
+        }
+    }
+
+    .name{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+@media(max-width: 400px){
+    .logo-parent{
+        align-items: center;
+
+        img{
+            width: 350px;
+            max-width: 100%;
+        }
     }
 }

@@ -10,10 +10,6 @@
     justify-content: flex-end;
     z-index: 53;
     padding-right: 5%;
-
-    @media (min-width: 600px) {
-        display: none;
-    }
 }
 
 
@@ -25,11 +21,6 @@
     width: 30px;
     height: 30px;
     z-index: 54;
-
-
-    @media (min-width: 600px) {
-        display: none;
-    }
 }
 
 .burger-middle-line {
@@ -176,4 +167,12 @@ a {
     width: 80px;
     object-fit: contain;
     cursor: pointer;
+}
+
+
+@media (min-width: 600px) {
+    .burger-btn-div,
+    .burger-btn {
+        display: none;
+    }
 }
