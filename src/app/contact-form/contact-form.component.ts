@@ -56,15 +56,18 @@ export class ContactFormComponent {
     fd.append('email', emailField.value);
   }
 
-
   // hier wird das ganze an die unten stehende URL per "post request" gesendet  
   async sendData(fd: any) {
-    await fetch('https://robert-aliaj.de/send_mail.php',
-      {
-        method: 'POST',
-        body: fd,
-      }
-    );
+    try {
+      await fetch('https://robert-aliaj.de/send_mail.php',
+        {
+          method: 'POST',
+          body: fd,
+        }
+      );
+    } catch (error) {
+      console.error("Fehler beim Senden der Daten:", error);
+    }
   }
 
 

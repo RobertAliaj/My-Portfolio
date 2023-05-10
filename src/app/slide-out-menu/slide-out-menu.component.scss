@@ -126,7 +126,7 @@ li {
 a {
     display: block;
     padding: 10px 20px;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 0.9285714285714286rem + 2.857142857142857vw, 2rem);
     color: white;
     text-decoration: none;
     position: relative;
@@ -135,10 +135,6 @@ a {
     outline: none;
     width: max-content !important;
     width: 100%;
-
-    @media(max-width:480px) {
-        font-size: 3rem;
-    }
 
     &:after {
         content: '';

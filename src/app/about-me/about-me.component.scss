@@ -58,23 +58,11 @@ section {
     width: 40%;
     position: absolute;
     right: 0;
-}
-
-.blue-circle {
-    border: 4px solid #00BEE8;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    width: 600px;
-    height: clamp(300px, 137.8839590443686px + 17.064846416382252vw, 400px);
 
     img {
-        width: 90%;
+        width: clamp(350px, 204.09556313993173px + 15.358361774744028vw, 440px);
         object-fit: cover;
         margin-top: 30px;
-        opacity: 0;
     }
 }
 
