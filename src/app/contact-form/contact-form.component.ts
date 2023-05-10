@@ -40,7 +40,7 @@ export class ContactFormComponent {
     let sendButton = this.sendButton.nativeElement;
     let fd = new FormData();
 
-    this.prepareData(fd, nameField, messageField);
+    this.prepareData(fd, nameField, messageField, emailField);
     this.sendData(fd);
     this.disableInputFields(nameField, messageField, sendButton);
 
@@ -50,15 +50,16 @@ export class ContactFormComponent {
   }
 
 
-  prepareData(fd: any, nameField: any, messageField: any) {
+  prepareData(fd: any, nameField: any, messageField: any, emailField: any) {
     fd.append('name', nameField.value);
     fd.append('message', messageField.value);
+    fd.append('email', emailField.value);
   }
 
 
   // hier wird das ganze an die unten stehende URL per "post request" gesendet  
   async sendData(fd: any) {
-    await fetch('https://robert-aliaj.developerakademie.net/send_mail/send_mail.php',
+    await fetch('https://robert-aliaj.de/send_mail.php',
       {
         method: 'POST',
         body: fd,
