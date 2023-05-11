@@ -1,7 +1,7 @@
 section {
     background-image: url('^assets/img/background-images/background-projects.webp');
     background-repeat: no-repeat;
-    background-position: -120px 0px;
+    background-position: -120px 60%;
     padding: 0 10% 0 10%;
     position: relative;
 }
@@ -37,6 +37,7 @@ section {
     align-items: flex-start;
     text-align: left;
     width: 50%;
+    gap: 15px;
 }
 
 
@@ -121,11 +122,9 @@ section {
 
 
 .background {
-    width: unset !important;
     position: absolute;
     right: 0;
     object-fit: contain;
-    width: calc(100% - 100px);
     z-index: -15;
     bottom: -335px;
 }
@@ -134,6 +133,10 @@ section {
 @media(max-width: 950px) {
 
     section {
+        background-image: url('^assets/img/background-images/background-projects.webp');
+        background-repeat: no-repeat;
+        background-position: 45% 37%;
+        background-size: clamp(400px, 349px + 16vw, 500px);
         padding: 0 5% 0 5%;
     }
 
@@ -147,6 +150,11 @@ section {
         }
     }
 
+    .background{
+        width: clamp(190px, 74.0677966101695px + 32.20338983050847vw, 380px);
+        bottom: clamp(-400px, -439.66101694915255px + 11.016949152542372vw, -335px);
+    }
+    
     .project-description,
     .project-description-reverse,
     .img-div,

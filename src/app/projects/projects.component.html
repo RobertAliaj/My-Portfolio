@@ -16,12 +16,16 @@
 
             <p>{{ project.description }}</p>
 
+
             <div [ngClass]="{'button-div-reverse': i % 2 == 1, 'button-div': i % 2 == 0}">
-                <a class="project-button" href="#">Live Test</a>
-                <a class="project-button github-button" href="#">Github</a>
+                <ng-container *ngFor="let link of project.links; let j = index">
+                    <a *ngIf="j == 0" class="project-button" href="{{ link }}" target="_blank">Live Test</a>
+                    <a *ngIf="j == 1" class="project-button github-button" href="{{ link }}" target="_blank">Github</a>
+                </ng-container>
             </div>
+
         </div>
     </div>
 
-    <!-- <img class="background" src="assets/img/background-images/bg-green-p.webp"> -->
+    <img class="background" src="assets/img/background-images/bg-green-p.webp">
 </section>

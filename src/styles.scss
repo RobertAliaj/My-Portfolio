@@ -14,17 +14,12 @@ body {
     background-color: rgb(20, 29, 47);
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    // background-image: url('^assets/img/background-images/Contact-form-bg.webp');
-    // background-repeat: no-repeat;
-    // background-size: contain;
-    // background-position: left bottom;
-    // background-size: 650px;
 
-    // background-image: url('^assets/img/background-images/crop.webp');
-    // background-repeat: no-repeat;
-    // background-size: contain;
-    // background-position: left bottom;
-    // background-size: 400px;
+
+    background-image: url('^assets/img/background-images/intro-crop.webp'), url('^assets/img/background-images/skills.webp');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top 3% left -5%, left 40%;
+    background-size: clamp(570px, 197.1331058020478px + 39.249146757679185vw, 800px), 400px;
 }
 
 a,
@@ -81,3 +76,22 @@ img {
     background-color: rgb(75, 71, 255);
     transform: scaleX(1.1) scaleY(1.1);
 }
+
+// @media(max-width: 950px){
+
+//     body{
+//         background-image: url('^assets/img/background-images/intro-crop.webp'), url('^assets/img/background-images/skills.webp');
+//         background-position: top 140px left clamp(-45px, -104px + 15vw, 50px), left -120px  top 40%;
+//         background-size: clamp(400px, 196px + 63vw, 800px), clamp(190px, 83.33333333333334px + 33.33333333333333vw, 400px);
+//     }
+// }
+
+
+// @media(max-width: 320px){
+
+//     body{
+//         background-image: url('^assets/img/background-images/intro-crop.webp'), url('^assets/img/background-images/skills.webp');
+//         background-position: top 140px left clamp(-45px, -104px + 15vw, 50px), left -108px  top 39%;
+//         background-size: clamp(400px, 196px + 63vw, 800px), clamp(190px, 83.33333333333334px + 33.33333333333333vw, 400px);
+//     }
+// }

@@ -135,6 +135,15 @@
 }
 
 
+.background {
+    position: absolute;
+    left: 0;
+    bottom: -300px;
+    z-index: -1;
+    width: clamp(450px, 436.8421052631579px + 4.111842105263158vw, 500px);
+}
+
+
 /* Change the white to any color */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -216,5 +225,11 @@ input {
         p {
             width: 100%;
         }
+    }
+
+    .background {
+        left: -120px;
+        bottom: -200px;
+        height: 350px;
     }
 }
