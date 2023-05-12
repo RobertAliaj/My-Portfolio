@@ -4,11 +4,15 @@ section {
     flex-direction: column;
     align-items: center;
     padding: 0 10% 0 10%;
-    // background-image: url('^assets/img/background-images/introduction-green.webp'), url('^assets/img/background-images/introduction-purple.webp');
-    // background-position: left 200px top 20px, left -20px top 54px;
-    // background-repeat: no-repeat;
     position: relative;
     scroll-margin-top: 120px;
+}
+
+.hidden{
+    // display: none !important;
+    font-size: clamp(1.625rem, 0.40912969283276457rem + 2.04778156996587vw, 2.375rem) !important;
+    margin-top: 11% !important;
+    left: -17% !important;
 }
 
 
@@ -178,13 +182,9 @@ section {
         display: none;
     }
 
-
-    // Wenn das rein kommt passt es beim HAndy, dafür aber beim Normalen Bildschirm nicht mehr
-
-    // .vector-img-responsive {
-    // width: 100%;
-    // width: calc(100vw - clamp(0px, -10.158730158730158px + 3.1746031746031744vw, 20px));
-    // }
+    .hidden{
+        font-size: clamp(0.875rem, 0.03893442622950816rem + 3.934426229508197vw, 2.375rem) !important; 
+    }
 
     .introduction-parent {
         flex-direction: column;

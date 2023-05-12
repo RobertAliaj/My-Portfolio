@@ -28,9 +28,9 @@ export class ProjectsComponent {
       description: [
         'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe Peligroso to win his live or die fight again the chickens',
       ],
-      image: 'Pollo loco 1.png',
+      image: 'Join.png',
       links: [
-        '',
+        'https://join.robert-aliaj.de/login.html',
         'https://github.com/AlinaWetter/join',
       ],
     }, {
@@ -39,7 +39,7 @@ export class ProjectsComponent {
       description: [
         'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
       ],
-      image: 'Pollo loco 1.png',
+      image: 'pokedex.png',
       links: [
         'http://pokedex.robert-aliaj.de/',
         'https://github.com/RobertAliaj/Pokedex',

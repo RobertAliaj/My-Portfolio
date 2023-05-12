@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 
@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class HeaderComponent {
+
+  @ViewChild('iam') iam!: ElementRef;
 
   german = false;
   flagSrc = 'assets/img/german-flag.webp';
@@ -23,4 +25,5 @@ export class HeaderComponent {
     this.translate.use(this.german ? 'de' : 'en');
     this.flagSrc = this.german ? 'assets/img/english-flag.webp' : 'assets/img/german-flag.webp';
   }
+  
 }

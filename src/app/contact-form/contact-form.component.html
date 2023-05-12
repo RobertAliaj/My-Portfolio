@@ -1,10 +1,10 @@
 <div class="contact-section">
 
     <div class="contact-text">
-        <span>Got a problem to solve?</span>
-        <p>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to your
+        <span translate>Got a problem to solve?</span>
+        <p translate>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to your
             projects with my work.</p>
-        <p>Need a Frontend developer? <b> Contact me! </b></p>
+        <p translate>Need a Frontend developer? <b translate> Contact me! </b></p>
     </div>
 
     <form (submit)="sendMail()" #myForm ngNativeValidate>
@@ -13,7 +13,7 @@
             <input required type="text" name="name" placeholder="Your name" #nameField (input)="onInput('name')"
                 (blur)="onBlur($event)" (focus)="onFocus($event, 'name')">
 
-            <span [class.transparent]="!showWarningName">Your name is required</span>
+            <span [class.transparent]="!showWarningName" translate>Your name is required</span>
 
             <img *ngIf="showGreenCheckName" src="assets/img/background-images/input-bg-success.webp">
         </div>
@@ -22,7 +22,7 @@
             <input required type="email" name="email" #emailField placeholder="Your email" (input)="onInput('email')"
                 (blur)="onBlur($event)" (focus)="onFocus($event, 'email')">
 
-            <span [class.transparent]="!showWarningEmail">Your email is required</span>
+            <span [class.transparent]="!showWarningEmail" translate>Your email is required</span>
 
             <img *ngIf="showGreenCheckEmail" src="assets/img/background-images/input-bg-success.webp">
         </div>
@@ -32,14 +32,14 @@
                 (input)="onInput('message')" (blur)="onBlur($event)"
                 (focus)="onFocus($event, 'message')"></textarea>
 
-            <span [class.transparent]="!showWarningMessage">Your message is empty</span>
+            <span [class.transparent]="!showWarningMessage" translate>Your message is empty</span>
 
             <img *ngIf="showGreenCheckMessage" src="assets/img/background-images/input-bg-success.webp">
         </div>
 
         <button class="contact-button send-button" #sendButton type="submit">
-            <span *ngIf="!showLoader && !emailSent">Send Message</span>
-            <span *ngIf="emailSent && !showLoader">Thank You :) </span>
+            <span *ngIf="!showLoader && !emailSent" translate>Send Message</span>
+            <span *ngIf="emailSent && !showLoader" translate>Thank You :) </span>
             <div class="loader" *ngIf="showLoader && sendMail"></div>
         </button>
 
@@ -47,7 +47,6 @@
 
 
     <img class="background" src="assets/img/background-images/Contact-form-bg.webp" alt="">
-
 </div>
 
 

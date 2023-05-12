@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,9 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent {
   title = 'portfolio';
 
-
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, public router: Router) {
     // this language will be used as a fallback when a translation isn't found in the current language
     // translate.setDefaultLang('en');
-}
+  }
 
 }

@@ -15,7 +15,6 @@ body {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
 
-
     background-image: url('^assets/img/background-images/intro-crop.webp'), url('^assets/img/background-images/skills.webp');
     background-repeat: no-repeat, no-repeat;
     background-position: top 3% left -5%, left 40%;
@@ -77,21 +76,23 @@ img {
     transform: scaleX(1.1) scaleY(1.1);
 }
 
-// @media(max-width: 950px){
-
-//     body{
-//         background-image: url('^assets/img/background-images/intro-crop.webp'), url('^assets/img/background-images/skills.webp');
-//         background-position: top 140px left clamp(-45px, -104px + 15vw, 50px), left -120px  top 40%;
-//         background-size: clamp(400px, 196px + 63vw, 800px), clamp(190px, 83.33333333333334px + 33.33333333333333vw, 400px);
-//     }
-// }
 
 
-// @media(max-width: 320px){
+@media(max-width: 950px) {
 
-//     body{
-//         background-image: url('^assets/img/background-images/intro-crop.webp'), url('^assets/img/background-images/skills.webp');
-//         background-position: top 140px left clamp(-45px, -104px + 15vw, 50px), left -108px  top 39%;
-//         background-size: clamp(400px, 196px + 63vw, 800px), clamp(190px, 83.33333333333334px + 33.33333333333333vw, 400px);
-//     }
-// }
+    body {
+        background-image: url('^assets/img/background-images/intro-crop.webp'), url('^assets/img/background-images/skills.webp');
+        background-position: top 140px left clamp(-45px, -104px + 15vw, 50px), left -120px top 40%;
+        background-size: clamp(400px, 196px + 63vw, 800px), clamp(190px, 83px + 33vw, 400px);
+    }
+}
+
+
+@media(max-width: 320px) {
+
+    body {
+        background-image: url('^assets/img/background-images/intro-crop.webp'), url('^assets/img/background-images/skills.webp');
+        background-position: top 140px left clamp(-45px, -104px + 15vw, 50px), left -108px top 39%;
+        background-size: clamp(400px, 196px + 63vw, 800px), clamp(190px, 83px + 33vw, 400px);
+    }
+}

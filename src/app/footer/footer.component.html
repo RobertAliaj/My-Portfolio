@@ -1,10 +1,10 @@
-<footer class="footer-section">
+<footer class="footer-section" [class.remove-margin]="removeImg">
 
     <div class="logo-parent">
         <a href="#introduction">
             <img src="assets/img/logo.webp">
         </a>
-        <a routerLink="/imprint" class="imprint">Imprint</a>
+        <a routerLink="/imprint" class="imprint" translate>Imprint</a>
     </div>
 
     <div class="name">
@@ -14,6 +14,11 @@
     <div class="links">
         <a href="https://github.com/RobertAliaj" target="_blank"> <img src="assets/img/icons/github.webp"></a>
         <a href="mailto: robertaliaj97@gmail.com"> <img src="assets/img/icons/contact.webp"></a>
-        <a href="https://www.linkedin.com/in/robert-aliaj-373b6a235/" target="_blank"> <img src="assets/img/icons/linkedin.webp"></a>
+        <a href="https://www.linkedin.com/in/robert-aliaj-373b6a235/" target="_blank"> <img
+                src="assets/img/icons/linkedin.webp"></a>
     </div>
+
+    <a class="go-up-btn" href="#" [class.hidden]="removeImg">
+        <img src="assets/img/icons/Go-up-button.webp" alt="">
+    </a>
 </footer>
