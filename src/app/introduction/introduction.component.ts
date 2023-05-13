@@ -16,10 +16,7 @@ export class IntroductionComponent {
 
 
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      console.log(event.lang);
-      
       this.changeLang = !this.changeLang;
-      console.log(this.changeLang);
     });
   }
 }

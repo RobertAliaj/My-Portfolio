@@ -14,7 +14,10 @@
                 </ng-container>
             </span>
 
-            <p translate>{{ project.description }}</p>
+            <ng-container *ngFor="let currentDescription of project.description; let l = index">
+                <p translate *ngIf="l == 0 && event == 'en'">{{ currentDescription }}</p>
+                <p translate *ngIf="l == 1 && event == 'de'">{{ currentDescription }}</p>
+            </ng-container>
 
 
             <div [ngClass]="{'button-div-reverse': i % 2 == 1, 'button-div': i % 2 == 0}">
