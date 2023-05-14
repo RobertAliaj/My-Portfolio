@@ -10,7 +10,6 @@ export class SlideOutMenuComponent implements AfterViewInit {
   @ViewChild('menuBtn') menuBtn!: ElementRef;
   @ViewChild('menu') menu!: ElementRef;
 
-
   ngAfterViewInit(): void {
     let menuBtn = this.menuBtn.nativeElement;
     this.toggleMenuThroughButton(menuBtn);
@@ -22,10 +21,18 @@ export class SlideOutMenuComponent implements AfterViewInit {
     menuBtn.addEventListener('click', () => {
       this.menuButtonAnimation(menuBtn);
       this.toggleMenu();
+      this.toggleBodyOverflow()
     });
   };
 
-  
+
+  toggleBodyOverflow() {
+    const bodyTag = document.body;
+    bodyTag.style.overflow === "hidden" ? bodyTag.style.overflow = "unset" : bodyTag.style.overflow = "hidden";
+  }
+
+
+
   menuButtonAnimation(menuBtn: HTMLElement) {
     menuBtn.classList.toggle('open');
   }
@@ -48,11 +55,13 @@ export class SlideOutMenuComponent implements AfterViewInit {
   }
 
   closeMenuThroughLinks(menuBtn: HTMLElement) {
+    const bodyTag = document.body;
     let menuLinks = this.menu.nativeElement.querySelectorAll('a');
     menuLinks.forEach((link: HTMLElement) => {
       link.addEventListener('click', () => {
         this.toggleMenu();
         menuBtn.classList.remove('open');
+        bodyTag.style.overflow = "unset";
       });
     });
   }

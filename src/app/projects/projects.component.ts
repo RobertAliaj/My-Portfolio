@@ -20,7 +20,7 @@ export class ProjectsComponent {
       ],
       image: 'pollo-loco.png',
       links: [
-        'http://el-pollo-loco.robert-aliaj.de/',
+        'https://el-pollo-loco.robert-aliaj.de/',
         'https://github.com/RobertAliaj/El-Pollo-Loco',
       ],
     },
@@ -46,19 +46,30 @@ export class ProjectsComponent {
       ],
       image: 'pokedex.png',
       links: [
-        'http://pokedex.robert-aliaj.de/',
+        'https://pokedex.robert-aliaj.de/',
         'https://github.com/RobertAliaj/Pokedex',
       ],
     },
+    {
+      title: 'Ring of Fire',
+      skills: ['Angular', 'Firebase', 'Material Design'],
+      description: [
+        'Ring Of Fire is an interactive drinking game app built using Angular, Firebase, and Material Design. It provides a fun way to play with friends and family while enjoying a few drinks at the same time.',
+        'ing Of Fire ist eine interaktive Trinkspiel-App, die mit Angular, Firebase und Material Design entwickelt wurde. Sie bietet eine lustige Möglichkeit, mit Freunden und Familie zu spielen, während man gleichzeitig ein paar Getränke genießt.'
+      ],
+      image: 'ring-of-fire.png',
+      links: [
+        'https://ring-of-fire.robert-aliaj.de/',
+        'https://github.com/RobertAliaj/Ring-Of-Fire',
+      ],
+    }
   ];
 
   event = 'en';
 
-  constructor(public translate: TranslateService){
+  constructor(public translate: TranslateService) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.event = event.lang;
-      console.log(this.event);
-      
     });
   }
 

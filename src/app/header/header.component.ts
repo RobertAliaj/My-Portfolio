@@ -20,10 +20,10 @@ export class HeaderComponent {
     translate.setDefaultLang('en');
   }
 
+
   toggleLanguage() {
     this.german = !this.german;
     this.translate.use(this.german ? 'de' : 'en');
     this.flagSrc = this.german ? 'assets/img/english-flag.webp' : 'assets/img/german-flag.webp';
   }
-  
 }

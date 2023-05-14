@@ -21,6 +21,26 @@ body {
     background-size: clamp(570px, 197.1331058020478px + 39.249146757679185vw, 800px), 400px;
 }
 
+/* width */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 a,
 button,
 img {
@@ -75,8 +95,6 @@ img {
     background-color: rgb(75, 71, 255);
     transform: scaleX(1.1) scaleY(1.1);
 }
-
-
 
 @media(max-width: 950px) {
 

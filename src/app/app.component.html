@@ -1,4 +1,4 @@
 <app-header></app-header>
 <app-slide-out-menu></app-slide-out-menu>
-<router-outlet></router-outlet> 
+<router-outlet (activate)="onActivate()"></router-outlet> 
 <app-footer [removeImg]="router.url == '/imprint'"></app-footer>
