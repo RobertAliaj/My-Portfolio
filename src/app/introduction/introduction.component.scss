@@ -8,13 +8,11 @@ section {
     scroll-margin-top: 120px;
 }
 
-.hidden {
-    // display: none !important;
+.iam {
     font-size: clamp(1.625rem, 0.40912969283276457rem + 2.04778156996587vw, 2.375rem) !important;
     margin-top: 11% !important;
     left: -17% !important;
 }
-
 
 .introduction-img {
     width: 32vw;
@@ -154,6 +152,7 @@ section {
     height: 600px;
 }
 
+
 @keyframes scroll-down-animation {
 
     0%,
@@ -181,7 +180,7 @@ section {
         display: none;
     }
 
-    .hidden {
+    .iam {
         font-size: clamp(0.875rem, 0.03893442622950816rem + 3.934426229508197vw, 2.375rem) !important;
     }
 

@@ -14,13 +14,4 @@ export class AppComponent {
     // this language will be used as a fallback when a translation isn't found in the current language
     // translate.setDefaultLang('en');
   }
-
-  onActivate() {
-    // window.scroll({ 
-    //         top: 0, 
-    //         left: 0, 
-    //         behavior: 'smooth'
-    //  });
- }
-
 }

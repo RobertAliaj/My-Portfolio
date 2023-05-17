@@ -19,7 +19,6 @@
                 <p translate *ngIf="l == 1 && event == 'de'">{{ currentDescription }}</p>
             </ng-container>
 
-
             <div [ngClass]="{'button-div-reverse': i % 2 == 1, 'button-div': i % 2 == 0}">
                 <ng-container *ngFor="let link of project.links; let j = index">
                     <a *ngIf="j == 0" class="project-button" href="{{ link }}" target="_blank">Live Test</a>

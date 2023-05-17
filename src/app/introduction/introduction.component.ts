@@ -10,13 +10,12 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 export class IntroductionComponent {
 
-  changeLang = true;
+  event: string = '';
 
   constructor(public translate: TranslateService) {
 
-
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.changeLang = !this.changeLang;
+      this.event = event.lang;
     });
   }
 }

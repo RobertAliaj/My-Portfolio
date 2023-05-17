@@ -12,7 +12,6 @@
     padding-right: 5%;
 }
 
-
 .burger-btn {
     display: flex;
     justify-content: center;
@@ -84,7 +83,7 @@
     }
 }
 
-// bis wo das Menu kommen soll 
+// where the menu should stop when sliding in
 .open {
     right: 0;
 }
@@ -100,7 +99,7 @@ li {
     margin-bottom: 15px;
 }
 
-// Wie schnell die Links-Animation ausgeführt wird
+//How quick the links animation should be
 .slide-out-menu.open ul li {
     animation: slideInLinks 0.9s forwards;
 }

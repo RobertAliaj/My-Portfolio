@@ -54,6 +54,7 @@ export class SlideOutMenuComponent implements AfterViewInit {
     }
   }
 
+  
   closeMenuThroughLinks(menuBtn: HTMLElement) {
     const bodyTag = document.body;
     let menuLinks = this.menu.nativeElement.querySelectorAll('a');

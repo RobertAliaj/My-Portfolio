@@ -13,7 +13,7 @@ export class HeaderComponent {
   @ViewChild('iam') iam!: ElementRef;
 
   german = false;
-  flagSrc = 'assets/img/german-flag.webp';
+  flagSrc = 'assets/img/header/german-flag.webp';
 
   constructor(public translate: TranslateService) {
     translate.addLangs(['en', 'de']);
@@ -24,6 +24,6 @@ export class HeaderComponent {
   toggleLanguage() {
     this.german = !this.german;
     this.translate.use(this.german ? 'de' : 'en');
-    this.flagSrc = this.german ? 'assets/img/english-flag.webp' : 'assets/img/german-flag.webp';
+    this.flagSrc = this.german ? 'assets/img/header/english-flag.webp' : 'assets/img/header/german-flag.webp';
   }
 }

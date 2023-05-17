@@ -17,7 +17,7 @@
 
 
         .input-bg-warning {
-            background: url('^assets/img/background-images/input-bg.webp') no-repeat scroll 7px 7px !important;
+            background: url('^assets/img/background-images/input-bg-danger.webp') no-repeat scroll 7px 7px !important;
             background-position: calc(100% - 20px) 10px !important;
         }
 
@@ -34,6 +34,7 @@
             background: #141D2F;
             color: white;
             padding-right: 50px;
+            caret-color: white;
         }
 
 
@@ -158,10 +159,6 @@ input:-webkit-autofill:active {
 /*Change text in autofill textbox*/
 input:-webkit-autofill {
     -webkit-text-fill-color: white !important;
-}
-
-input {
-    caret-color: white;
 }
 
 .input-parent {

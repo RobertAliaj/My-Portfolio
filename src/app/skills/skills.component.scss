@@ -47,13 +47,6 @@ section {
     width: max-content;
 }
 
-.background {
-    position: absolute;
-    left: -550px;
-    z-index: -10;
-    transform: rotateX(160deg);
-}
-
 .blue-line-right {
     position: absolute;
     top: clamp(42px, 29.03071672354949px + 1.3651877133105803vw, 50px);
@@ -96,19 +89,5 @@ section {
     .blue-line-right {
         top: clamp(26px, 18.88888888888889px + 2.2222222222222223vw, 40px);
         width: clamp(13px, 2.333333333333334px + 3.3333333333333335vw, 34px);
-    }
-
-    .background {
-        height: clamp(500px, 418.73015873015873px + 25.396825396825395vw, 660px);
-        width: clamp(450px, 353.4920634920635px + 30.158730158730158vw, 640px);
-        left: clamp(-340px, -197.77777777777777px + -44.44444444444444vw, -620px);
-        top: 400px;
-    }
-}
-
-
-@media(max-width: 480px){
-    .background{
-        top: 490px;
     }
 }

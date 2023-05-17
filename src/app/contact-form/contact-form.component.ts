@@ -9,7 +9,6 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 
 export class ContactFormComponent {
 
-  // Viewchild muss erst mal importiert werden (oben) damit auf das "Id" zugegriefen werden kann
   @ViewChild('nameField') nameField!: ElementRef;
   @ViewChild('messageField') messageField!: ElementRef;
   @ViewChild('emailField') emailField!: ElementRef;
@@ -33,6 +32,10 @@ export class ContactFormComponent {
 
   constructor() { }
 
+
+  /**
+   * This Method ist used to get the Value from the Formular and send it to the email.
+   */
   sendMail() {
     let nameField = this.nameField.nativeElement;
     let messageField = this.messageField.nativeElement;
@@ -56,7 +59,7 @@ export class ContactFormComponent {
     fd.append('email', emailField.value);
   }
 
-  // hier wird das ganze an die unten stehende URL per "post request" gesendet  
+
   async sendData(fd: any) {
     try {
       await fetch('https://robert-aliaj.de/send_mail.php',
