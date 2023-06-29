@@ -33,21 +33,21 @@ export class ProjectsComponent {
       ],
       image: 'Join.webp',
       links: [
-        'https://join.robert-aliaj.de/login.html',
+        'https://gruppe-join-421.developerakademie.net/login.html',
         'https://github.com/AlinaWetter/join',
       ],
     },
     {
-      title: 'Pokedex',
-      skills: ['JavaScript', 'HTML', 'CSS', 'API'],
+      title: 'Simple CRM',
+      skills: ['Angular', 'Firebase', 'Material Design', 'API'],
       description: [
-        'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
-        'Basierend auf der PokéAPI, eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert.'
+        'A simple Customer Relationship Management system working with CRUD functionality',
+        'Ein einfaches Kundenbeziehungsmanagement-System, das mit CRUD-Funktionalität arbeitet.'
       ],
-      image: 'pokedex.webp',
+      image: 'crm.webp',
       links: [
-        'https://pokedex.robert-aliaj.de/',
-        'https://github.com/RobertAliaj/Pokedex',
+        'http://crm.robert-aliaj.de/',
+        'https://github.com/RobertAliaj/Simple-CRM',
       ],
     },
     {
